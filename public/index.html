@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>IKE-STITCHES | Luxury Fashion Brand</title>
+        
+        <!-- SEO -->
+        <meta name="description" content="IKE-ELITE-COUTURE is a luxury fashion brand in Nigeria creating custom gowns, Ankara styles, bridal wear and elegant outfits tailored to perfection.">
+        <meta name="keywords" content="ike elite couture, fashion brand nigeria, luxury gowns, ankara styles, bridal dresses, custom tailoring Lagos">
+        <meta name="author" content="IKE-ELITE-COUTURE">
+        
+        <!-- FAVICON (IMPORTANT) -->
+        <link rel="icon" href="logo.png" type="image/png">
+        
+        <!-- OPEN GRAPH (WhatsApp / Facebook preview) -->
+        <meta property="og:title" content="IKE-ELITE-COUTURE Luxury Fashion Brand">
+        <meta property="og:description" content="Custom luxury outfits tailored perfectly for elegance and confidence.">
+        <meta property="og:image" content="logo.png">
+        <meta property="og:type" content="website">
+        
+        <!-- TWITTER CARD -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="IKE-ELITE-COUTURE">
+        <meta name="twitter:description" content="Luxury fashion brand in Nigeria">
+        <meta name="twitter:image" content="logo.png">
+        
+        <!-- THEME COLOR (mobile browser) -->
+        <meta name="theme-color" content="#000000">
+        
+        <!-- STYLES -->
+        <link rel="stylesheet" href="style.css">
+
+        
+        <!-- ICONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+        <!-- FONT -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+
+<body>
+    <h1 style="display:none;">
+        IKE-ELITE-COUTURE Luxury Fashion Brand in Nigeria
+    </h1>
+    <!-- ========================================= -->
+<!-- LUXURY LOADER -->
+<!-- ========================================= -->
+
+<div id="loader">
+
+    <img
+    src="logo.png"
+    alt="IKE-ELITE-COUTURE Logo"
+    class="loader-logo">
+    
+    <h2>IKE-STITCHES</h2>
+    
+    <p>Luxury Fashion Brand</p>
+    
+</div>
+
+<!-- ========================================= -->
+<!-- HEADER -->
+<!-- ========================================= -->
+
+    <header class="main-header">
+
+        <div class="header-left">
+
+        <div class="cart-icon"
+        onclick="toggleCart()">
+
+        <i class="fas fa-bag-shopping"></i>
+
+        <span id="cartCount">0</span>
+
+        </div>
+
+        </div>
+
+        <!-- BRAND -->
+
+        <div class="brand-area">
+
+        <img
+        src="logo.png"
+        alt="IKE STITCHES Logo"
+        class="logo">
+
+        <div class="brand-text">
+
+        <h1 class="brand-title">
+        IKE-ELITE-COUTURE
+        </h1>
+
+        <p class="brand-subtitle">
+        Luxury Fashion Brand
+        </p>
+
+        </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="header-right">
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="navbar">
+
+        <a href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+
+        <button class="nav-drop-btn">
+        Collections ▼
+        </button>
+
+        <div class="nav-dropdown-content">
+
+        <a href="gallery.html">All Collections</a>
+
+        <a href="gallery.html">Luxury Gowns</a>
+
+       <a href="gallery.html">Ankara Styles</a>
+
+        <a href="gallery.html">Corset Dresses</a>
+
+        <a href="gallery.html">Bridal Wear</a>
+
+        </div>
+
+        </div>
+
+        <div class="nav-dropdown">
+
+        <button class="nav-drop-btn">
+        Shop ▼
+        </button>
+
+        <div class="nav-dropdown-content">
+
+        <a href="services.html">All Services</a>
+
+        <a href="booking.html">Book Outfit</a>
+
+        <a href="product.html">Ready To Wear</a>
+
+        </div>
+
+        </div>
+
+        <a href="services.html">Services</a>
+
+        <a href="about.html">About</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="admin.html">Admin</a>
+
+        <!-- DESKTOP AUTH -->
+
+        <div class="desktop-auth">
+
+        <a href="login.html"
+        class="login-btn">
+
+        <i class="fa-solid fa-user"></i>
+        Login
+
+        </a>
+
+        <a href="register.html"
+        class="register-btn">
+
+        <i class="fa-solid fa-user-plus"></i>
+        Register
+
+        </a>
+
+        <button
+        class="logout-btn"
+        onclick="logout()">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+
+        </button>
+
+        </div>
+
+        <!-- THEME -->
+
+        <div class="theme-dropdown">
+
+        <button
+        class="theme-btn"
+        onclick="toggleThemeMenu()">
+
+        <i class="fas fa-palette"></i>
+
+        </button>
+
+        <div
+        class="theme-options"
+        id="themeOptions">
+
+        <button onclick="setTheme('light')">
+        ☀ Light
+        </button>
+
+        <button onclick="setTheme('dark')">
+        🌙 Dark
+        </button>
+
+        </div>
+
+        </div>
+
+        </nav>
+
+        <!-- MOBILE MENU ICON -->
+
+        <div class="menu-icon"
+        onclick="toggleMenu()">
+
+        <i class="fas fa-bars"></i>
+
+        </div>
+
+        </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- MOBILE MENU -->
+        <!-- ========================================= -->
+
+        <div
+        class="mobile-menu"
+        id="mobileMenu">
+
+        <a href="index.html">🏠 Home</a>
+
+        <div class="mobile-dropdown">
+
+            <button
+            class="mobile-drop-btn"
+            onclick="toggleMobileDropdown('collectionsMenu')">
+            
+            🛍 Collections ▼
+            
+            </button>
+            
+            <div
+            class="mobile-drop-content"
+            id="collectionsMenu">
+            
+            <a href="gallery.html">All Collections</a>
+            
+            <a href="gallery.html">Luxury Gowns</a>
+            
+            <a href="gallery.html">Ankara Styles</a>
+            
+            <a href="gallery.html">Corset Dresses</a>
+            
+            <a href="gallery.html">Bridal Wear</a>
+            
+            </div>
+            
+        </div>
+        <div class="mobile-dropdown">
+
+            <button
+            class="mobile-drop-btn"
+            onclick="toggleMobileDropdown('shopMenu')">
+            
+            🛒 Shop ▼
+            
+            </button>
+            
+            <div
+            class="mobile-drop-content"
+            id="shopMenu">
+            
+            <a href="services.html">All Services</a>
+            
+            <a href="booking.html">Book Outfit</a>
+            
+            <a href="product.html">Ready To Wear</a>
+            
+            </div>
+            
+        </div>
+        <a href="dashboard.html">📦 Dashboard</a>
+
+        <a href="about.html">👑 About</a>
+
+        <a href="blog.html">📰 Blog</a>
+
+        <a href="contact.html">📞 Contact</a>
+
+        <a href="privacy.html">🔒 Privacy Policy</a>
+
+        <a href="refunds.html">💳 Refund Policy</a>
+
+        <a href="shipping.html">🚚 Shipping</a>
+
+        <a href="size-guide.html">📏 Size Guide</a>
+        <div class="mobile-dropdown">
+
+            <button
+            class="mobile-drop-btn"
+            onclick="toggleMobileDropdown('themeMenu')">
+            
+            🎨 Theme ▼
+            
+            </button>
+            
+            <div
+            class="mobile-drop-content"
+            id="themeMenu">
+            
+            <button onclick="setTheme('light')">
+            ☀ Light Mode
+            </button>
+            
+            <button onclick="setTheme('dark')">
+            🌙 Dark Mode
+            </button>
+            
+            </div>
+            
+        </div>
+
+        <div class="mobile-auth">
+
+        <a href="login.html"
+        class="login-btn">
+
+        Login
+
+        </a>
+
+        <a href="register.html"
+        class="register-btn">
+
+        Register
+
+        </a>
+
+        <button
+        class="logout-btn"
+        onclick="logout()">
+
+        Logout
+
+        </button>
+
+        </div>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- CART SIDEBAR -->
+        <!-- ========================================= -->
+
+        <div
+        class="cart-sidebar"
+        id="cartSidebar">
+
+        <div class="cart-top">
+
+        <h2>Your Cart</h2>
+
+        <button
+        class="close-cart"
+        onclick="toggleCart()">
+
+        ✖
+
+        </button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <button
+        class="checkout-btn"
+        onclick="goToBooking()">
+
+        Proceed To Checkout
+
+        </button>
+
+    </div>
+
+<!-- ========================================= -->
+<!-- HERO -->
+<!-- ========================================= -->
+
+<section class="hero">
+
+<div class="hero-slider">
+
+<img src="owner1.png" class="slide active" alt="Fashion Slide">
+
+<img src="owner2.png" class="slide" alt="Fashion Slide">
+
+<img src="owner3.png" class="slide" alt="Fashion Slide">
+
+<img src="owner4.png" class="slide" alt="Fashion Slide">
+
+<img src="owner5.png" class="slide" alt="Fashion Slide">
+
+<img src="owner6.png" class="slide" alt="Fashion Slide">
+
+<img src="owner7.png" class="slide" alt="Fashion Slide">
+
+<img src="owner8.png" class="slide" alt="Fashion Slide">
+
+<img src="owner9.png" class="slide" alt="Fashion Slide">
+
+<img src="owner10.png" class="slide" alt="Fashion Slide">
+
+</div>
+
+<h2 class="hero-heading">
+CRAFTING YOUR PERFECT FIT
+</h2>
+
+<p class="hero-description">
+
+Custom-made outfits tailored perfectly for your elegance, beauty and confidence.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="gallery.html" class="btn">
+Explore Styles
+</a>
+
+<a href="booking.html" class="btn">
+Book Now
+</a>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FEATURED COLLECTIONS -->
+<!-- ========================================= -->
+<section>
+
+<h2>Featured Collections</h2>
+
+<div class="gallery-grid">
+
+<div class="style-card">
+
+<img src="ankara15.png" alt="Luxury Gown">
+
+<h3>Luxury Ankara Gown</h3>
+
+<p>₦45,000</p>
+
+<button
+onclick="openProduct('ankara15')">
+
+View Style
+
+</button>
+
+</div>
+
+<div class="style-card">
+
+<img src="corset3.png" alt="Corset Dress">
+
+<h3>Royal Corset Dress</h3>
+
+<p>₦55,000</p>
+
+<button
+onclick="openProduct('corset3')">
+
+View Style
+
+</button>
+
+</div>
+
+<div class="style-card">
+
+<img src="lace10.png" alt="Lace Gown">
+
+<h3>Luxury Lace Gown</h3>
+
+<p>₦60,000</p>
+
+<button
+onclick="openProduct('lace10')">
+
+View Style
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SERVICES -->
+<!-- ========================================= -->
+
+<section class="services">
+
+<h2 class="services-heading">
+Our Tailoring Services
+</h2>
+
+<div class="service-list">
+
+<div class="service-item">
+<h3>Luxury Gowns</h3>
+<p>Elegant gowns for weddings and events.</p>
+</div>
+
+<div class="service-item">
+<h3>Ankara Styles</h3>
+<p>Modern African fashion with perfect finishing.</p>
+</div>
+
+<div class="service-item">
+<h3>Bridal Dresses</h3>
+<p>Premium bridal outfits for your special day.</p>
+</div>
+
+<div class="service-item">
+<h3>Custom Measurements</h3>
+<p>Tailored precisely to your body size.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- PROCESS -->
+<!-- ========================================= -->
+
+<section class="process">
+
+<h2 class="process-heading">
+How It Works
+</h2>
+
+<div class="process-steps">
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Select Style</h3>
+
+<p>Choose your desired outfit from our collections.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Provide Measurements</h3>
+
+<p>Fill your accurate body measurements.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Make Payment</h3>
+
+<p>Securely pay through Paystack.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Delivery</h3>
+
+<p>Receive your luxury outfit anywhere in Nigeria.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- CTA -->
+<!-- ========================================= -->
+
+<section class="booking">
+
+<h2>Book Your Custom Outfit Today</h2>
+
+<p>
+Experience premium tailoring with elegance and perfect fitting.
+</p>
+
+<a href="booking.html" class="btn">
+Start Booking
+</a>
+
+</section>
+<section class="testimonials">
+
+    <h2>What Our Clients Say</h2>
+    
+    <div class="testimonial-grid">
+    
+    <div class="testimonial-card">
+    <p>
+    ★★★★★
+    </p>
+    
+    <p>
+    "The fitting was perfect and the quality exceeded my expectations."
+    </p>
+    
+    <h4>- Sarah A.</h4>
+    </div>
+    
+    <div class="testimonial-card">
+    <p>
+    ★★★★★
+    </p>
+    
+    <p>
+    "I received so many compliments at my event."
+    </p>
+    
+    <h4>- Deborah O.</h4>
+    </div>
+    
+    <div class="testimonial-card">
+    <p>
+    ★★★★★
+    </p>
+    
+    <p>
+    "Professional service from start to finish."
+    </p>
+    
+    <h4>- Grace K.</h4>
+    </div>
+    
+    </div>
+    
+</section>
+<section class="stats">
+
+    <div class="stat-box">
+    <h2>500+</h2>
+    <p>Happy Clients</p>
+    </div>
+    
+    <div class="stat-box">
+    <h2>1000+</h2>
+    <p>Outfits Made</p>
+    </div>
+    
+    <div class="stat-box">
+    <h2>5★</h2>
+    <p>Customer Rating</p>
+    </div>
+    
+    <div class="stat-box">
+    <h2>36+</h2>
+    <p>States Delivered</p>
+    </div>
+    
+</section>
+<section class="faq">
+
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+    <h3>How long does delivery take?</h3>
+    <p>Usually 5–14 working days depending on location.</p>
+    </div>
+    
+    <div class="faq-item">
+    <h3>Can I send my measurements?</h3>
+    <p>Yes, measurements can be uploaded during booking.</p>
+    </div>
+    
+    <div class="faq-item">
+    <h3>Do you deliver nationwide?</h3>
+    <p>Yes, we deliver across Nigeria.</p>
+    </div>
+    
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<div>
+
+<img src="logo.png" alt="Logo">
+
+<h3>IKE-STITCHES</h3>
+
+<p>
+Premium custom tailoring with perfect fit.
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<a href="homepage.html">Home</a>
+
+<a href="gallery.html">Gallery</a>
+
+<a href="services.html">Services</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h4>Customer Care</h4>
+
+<a href="privacy.html">Privacy Policy</a>
+
+<a href="refunds.html">Refund Policy</a>
+
+<a href="terms.html">Terms</a>
+
+<a href="shipping.html">Shipping Policy</a>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<p>📞 +2348109174369</p>
+
+<p>📍 Lagos, Nigeria</p>
+
+</div>
+
+<div>
+
+<h4>Follow Us</h4>
+
+<a href="#">
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+</a>
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+Facebook
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+Instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 IKE-STITCHES.
+All rights reserved.
+
+</div>
+
+</footer>
+
+<!-- ========================================= -->
+<!-- SCRIPTS -->
+<!-- ========================================= -->
+<script src="slider.js" defer></script>
+
+<script src="main.js" defer></script>
+
+<script src="script.js" defer></script>
+
+<script src="cart.js" defer></script>
+
+<script src="auth.js" defer></script>
+
+
+<script>
+
+    document.querySelectorAll(".nav-drop-btn").forEach(button=>{
+    
+    button.addEventListener("click",function(e){
+    
+    e.preventDefault();
+    
+    const parent=this.parentElement;
+    
+    document.querySelectorAll(".nav-dropdown").forEach(drop=>{
+    
+    if(drop!==parent){
+    drop.classList.remove("active");
+    }
+    
+    });
+    
+    parent.classList.toggle("active");
+    
+    });
+    
+    });
+    
+</script>
+<script>
+
+    window.addEventListener("load",()=>{
+    
+    const loader =
+    document.getElementById("loader");
+    
+    /* CHECK IF LOADER HAS SHOWN */
+    
+    if(sessionStorage.getItem("loaderShown")){
+    
+    loader.style.display="none";
+    
+    }else{
+    
+    sessionStorage.setItem("loaderShown","true");
+    
+    setTimeout(()=>{
+    
+    loader.style.opacity="0";
+    
+    loader.style.visibility="hidden";
+    
+    },3000);
+    
+    }
+    
+    });
+    
+</script>
+
+<div id="toastBox"></div>
+<a
+href="https://wa.me/2348109174369"
+class="whatsapp-float"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup">
+
+    <span id="closePopup">&times;</span>
+    
+    <button id="prevBtn">&#10094;</button>
+    
+    <img id="popupImg">
+    
+    <button id="nextBtn">&#10095;</button>
+    
+</div>
+<script>
+
+    /* IMAGE POPUP */
+    
+    const popup =
+    document.getElementById("imagePopup");
+    
+    const popupImg =
+    document.getElementById("popupImg");
+    
+    const closePopup =
+    document.getElementById("closePopup");
+    
+    /* ALL IMAGES YOU WANT CLICKABLE */
+    
+    document.querySelectorAll(
+    ".style-card img"
+    ).forEach(img => {
+    
+    img.addEventListener("click", function(){
+    
+    popup.style.display = "flex";
+    
+    popupImg.src = this.src;
+    
+    });
+    
+    });
+    
+    /* CLOSE POPUP */
+    
+    closePopup.onclick = function(){
+    
+    popup.style.display = "none";
+    
+    };
+    
+    /* CLOSE WHEN CLICKING OUTSIDE */
+    
+    popup.onclick = function(e){
+    
+    if(e.target === popup){
+    
+    popup.style.display = "none";
+    
+    }
+    
+    };
+    
+</script>
+</body>
+</html>

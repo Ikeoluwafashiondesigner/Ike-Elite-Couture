@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Ike Stitches</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+<div class="brand-area">
+
+<img src="logo.png"
+class="logo">
+
+<div>
+
+<h1 class="brand-title">
+IKE STITCHES
+</h1>
+
+<p class="brand-subtitle">
+USER DASHBOARD
+</p>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="homepage.html">
+HOME
+</a>
+
+<a href="booking.html">
+BOOK ORDER
+</a>
+
+</nav>
+
+<div class="auth-buttons">
+
+<button
+class="logout-btn"
+onclick="logout()">
+
+LOGOUT
+
+</button>
+
+</div>
+
+</header>
+
+
+<!-- DASHBOARD SECTION -->
+
+<div class="dashboard">
+
+    <h1>My Orders</h1>
+
+    <div id="ordersContainer"></div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+
+<div id="toastBox"></div>
+
+</body>
+
+</html>

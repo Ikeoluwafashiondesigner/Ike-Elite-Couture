@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Style Details</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="brand">
+<img src="logo.png" class="logo">
+<h1 class="hero-title">STYLE DETAILS</h1>
+</div>
+
+<div class="navbar">
+<a href="homepage.html">HOME</a>
+<a href="gallery.html">GALLERY</a>
+<a href="booking.html">BOOK ORDER</a>
+</div>
+
+<section>
+    <h2 id="styleName"></h2>
+    <img id="styleImg" width="300" style="border:3px solid gold;border-radius:12px">
+        
+    <div class="style-info">
+    <p><b>Price:</b> ₦35,000 - ₦120,000 (depends on fabric & size)</p>
+    <p><b>Fabric Options:</b> Ankara, Lace, Silk, Senator, Cotton</p>
+    <p><b>Available Sizes:</b> XS, S, M, L, XL, XXL, Custom Measurement</p>
+        
+    <h3>Design Description</h3>
+    <p>
+        This luxury custom-made design is crafted by Ike-Stitches Fashion House.  
+        You can later edit this description to explain fitting, stitching style, sleeves, and custom options.
+    </p>
+        
+    <h3>Production Time</h3>
+    <p>3 – 7 working days depending on design complexity.</p>
+    </div>
+        
+    <button onclick="bookStyle()" class="btn">BOOK THIS STYLE</button>
+</section>
+
+<script>
+document.getElementById("styleName").innerText = localStorage.getItem("styleName");
+document.getElementById("styleImg").src = localStorage.getItem("styleImg");
+
+function bookStyle(){
+window.location.href="booking.html";
+}
+</script>
+
+<footer class="footer">
+<div class="footer-content">
+<div>
+<img src="logo.png">
+<h3>IKE-STITCHES</h3>
+<p>Premium custom tailoring with perfect fit.</p>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>📞 +2348109174369</p>
+<p>📧 adepojufolashadeapeke@gmail.com</p>
+<div>
+    <h4>Follow Us</h4>
+    
+    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    
+    </div>
+<div class="footer-bottom">
+    © 2026 IKE-STITCHES. All rights reserved.
+    </div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

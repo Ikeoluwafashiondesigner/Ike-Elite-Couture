@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>IKE-STITCHES | Product</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+<!-- LEFT -->
+<div class="header-left">
+
+<div class="menu-icon"
+onclick="toggleMenu()">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+<nav class="navbar">
+
+<a href="homepage.html">Home</a>
+
+<a href="gallery.html">Collections</a>
+
+<a href="dashboard.html">
+My Orders
+</a>
+
+</nav>
+
+</div>
+
+<!-- CENTER -->
+<div class="brand-area">
+
+<img src="logo.png"
+class="logo">
+
+<div>
+
+<h1 class="brand-title">
+IKE-STITCHES
+</h1>
+
+<p class="brand-subtitle">
+Luxury Fashion Brand
+</p>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="header-right">
+
+<div class="cart-icon"
+onclick="toggleCart()">
+
+<i class="fas fa-shopping-cart"></i>
+
+<span id="cartCount">0</span>
+
+</div>
+
+<div class="theme-dropdown">
+
+    <button class="theme-btn"
+    onclick="toggleThemeMenu()">
+    
+    <i class="fas fa-palette"></i>
+    
+    </button>
+    
+    <div class="theme-options"
+    id="themeOptions">
+    
+    <button onclick="setTheme('light')">
+    ☀ Light
+    </button>
+    
+    <button onclick="setTheme('dark')">
+    🌙 Dark
+    </button>
+    
+    </div>
+    
+    </div>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu"
+id="mobileMenu">
+
+<a href="homepage.html">
+🏠 Home
+</a>
+
+<a href="gallery.html">
+👗 Collections
+</a>
+
+<a href="dashboard.html">
+📦 Orders
+</a>
+
+<a href="contact.html">
+📞 Contact
+</a>
+
+</div>
+
+<!-- ================= PRODUCT SECTION ================= -->
+
+<section class="product-page">
+
+<!-- LEFT IMAGE SIDE -->
+
+<div class="product-image-side">
+
+<img
+id="mainProductImg"
+class="main-product-image"
+src=""
+>
+
+
+
+</div>
+
+<!-- RIGHT INFO SIDE -->
+
+<div class="product-info-side">
+
+<h2 id="selectedStyle">
+Style Name
+</h2>
+
+<h3 id="stylePrice">
+₦0
+</h3>
+
+<p class="made-notice">
+
+Made to order • Delivery within
+<span id="styleDuration"></span>
+
+</p>
+
+<!-- SIZE -->
+
+<div class="size-row">
+
+<button class="size-btn">
+S
+</button>
+
+<button class="size-btn">
+M
+</button>
+
+<button class="size-btn">
+L
+</button>
+
+<button class="size-btn">
+XL
+</button>
+
+</div>
+
+<!-- QUANTITY + CART -->
+
+<div class="qty-cart-row">
+
+<div class="qty-box">
+
+<button onclick="decreaseQty()">
+-
+</button>
+
+<input
+type="number"
+id="qty"
+value="1"
+min="1"
+>
+
+<button onclick="increaseQty()">
++
+</button>
+
+</div>
+
+<button
+onclick="addCurrentStyleToCart()">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<br>
+
+<button
+onclick="goToBooking()"
+class="btn">
+
+Proceed To Payment
+
+</button>
+
+<!-- ACCORDION -->
+
+<div class="accordion">
+
+<button>
+Description
+</button>
+
+<div class="accordion-content show">
+
+<p id="styleDescription"></p>
+
+</div>
+
+</div>
+
+<div class="accordion">
+
+<button>
+Fabric & Care
+</button>
+
+<div class="accordion-content">
+
+<p>
+
+Fabric:
+<span id="styleFabric"></span>
+
+<br><br>
+
+Dry clean recommended.
+
+Do not bleach.
+
+Iron gently.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion">
+
+<button>
+Additional Information
+</button>
+
+<div class="accordion-content">
+
+<p>
+
+Premium handmade finishing.
+
+Luxury stitching quality.
+
+Perfect for weddings,
+owambe and classy outings.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CART SIDEBAR ================= -->
+
+<div class="cart-sidebar"
+id="cartSidebar">
+
+<div class="cart-top">
+
+<h2>Your Cart</h2>
+
+<button class="close-cart"
+onclick="toggleCart()">
+
+✕
+
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+</div>
+<a
+href="https://wa.me/2348109174369"
+class="btn">
+
+Order Via WhatsApp
+
+</a>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<div>
+
+<img src="logo.png">
+
+<h3>IKE-STITCHES</h3>
+
+<p>
+Premium luxury fashion brand.
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<a href="homepage.html">
+Home
+</a>
+
+<a href="gallery.html">
+Gallery
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<p>
+📞 +2348109174369
+</p>
+
+<p>
+📍 Lagos, Nigeria
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 IKE-STITCHES
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+<script src="styles.js"></script>
+<script src="product.js"></script>
+<script src="cart.js"></script>
+<div id="toastBox"></div>
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup">
+
+    <span id="closePopup">&times;</span>
+    
+    <button id="prevBtn">&#10094;</button>
+    
+    <img id="popupImg">
+    
+    <button id="nextBtn">&#10095;</button>
+    
+</div>
+<script>
+
+    document.addEventListener("DOMContentLoaded",()=>{
+    
+    const popup =
+    document.getElementById("imagePopup");
+    
+    const popupImg =
+    document.getElementById("popupImg");
+    
+    const closePopup =
+    document.getElementById("closePopup");
+    
+    const prevBtn =
+    document.getElementById("prevBtn");
+    
+    const nextBtn =
+    document.getElementById("nextBtn");
+    
+    let currentIndex = 0;
+    let galleryImages = [];
+    
+    document.body.addEventListener("click",(e)=>{
+    
+    if(
+    e.target.tagName==="IMG" &&
+    !e.target.closest("#imagePopup")
+    ){
+    
+    galleryImages =
+    Array.from(document.querySelectorAll("img"))
+    .filter(img=>img.id!=="popupImg");
+    
+    currentIndex =
+    galleryImages.indexOf(e.target);
+    
+    popup.style.display="flex";
+    
+    popupImg.src =
+    galleryImages[currentIndex].src;
+    
+    }
+    
+    });
+    
+    nextBtn.addEventListener("click",()=>{
+    
+    currentIndex++;
+    
+    if(currentIndex>=galleryImages.length){
+    
+    currentIndex=0;
+    
+    }
+    
+    popupImg.src =
+    galleryImages[currentIndex].src;
+    
+    });
+    
+    prevBtn.addEventListener("click",()=>{
+    
+    currentIndex--;
+    
+    if(currentIndex<0){
+    
+    currentIndex=
+    galleryImages.length-1;
+    
+    }
+    
+    popupImg.src =
+    galleryImages[currentIndex].src;
+    
+    });
+    
+    closePopup.addEventListener("click",()=>{
+    
+    popup.style.display="none";
+    
+    });
+    
+    popup.addEventListener("click",(e)=>{
+    
+    if(e.target===popup){
+    
+    popup.style.display="none";
+    
+    }
+    
+    });
+    
+    });
+    
+</script>
+</body>
+</html>

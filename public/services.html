@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>IKE-STITCHES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="main-header">
+
+        <div class="header-left">
+        
+        <div class="cart-icon"
+        onclick="toggleCart()">
+        
+        <i class="fas fa-bag-shopping"></i>
+        
+        <span id="cartCount">0</span>
+        
+        </div>
+        
+        </div>
+        
+        <!-- BRAND -->
+        
+        <div class="brand-area">
+        
+        <img
+        src="logo.png"
+        alt="IKE STITCHES Logo"
+        class="logo">
+        
+        <div class="brand-text">
+        
+        <h1 class="brand-title">
+        IKE-STITCHES
+        </h1>
+        
+        <p class="brand-subtitle">
+        Luxury Fashion Brand
+        </p>
+        
+        </div>
+        
+        </div>
+        
+        <!-- RIGHT -->
+        
+        <div class="header-right">
+        
+        <!-- DESKTOP NAV -->
+        
+        <nav class="navbar">
+        
+        <a href="homepage.html">Home</a>
+        
+        <div class="nav-dropdown">
+        
+        <button class="nav-drop-btn">
+        Collections ▼
+        </button>
+        
+        <div class="nav-dropdown-content">
+        
+        <a href="gallery.html">All Collections</a>
+        
+        <a href="gallery.html">Luxury Gowns</a>
+        
+        <a href="gallery.html">Ankara Styles</a>
+        
+        <a href="gallery.html">Corset Dresses</a>
+        
+        <a href="gallery.html">Bridal Wear</a>
+        
+        </div>
+        
+        </div>
+        
+        <div class="nav-dropdown">
+        
+        <button class="nav-drop-btn">
+        Shop ▼
+        </button>
+        
+        <div class="nav-dropdown-content">
+        
+        <a href="services.html">All Services</a>
+        
+        <a href="booking.html">Book Outfit</a>
+        
+        <a href="product.html">Ready To Wear</a>
+        
+        </div>
+        
+        </div>
+        
+        <a href="services.html">Services</a>
+        
+        <a href="about.html">About</a>
+        
+        <a href="blog.html">Blog</a>
+        
+        <a href="contact.html">Contact</a>
+        
+        <a href="dashboard.html">Dashboard</a>
+        
+        
+        <!-- THEME -->
+        
+        <div class="theme-dropdown">
+        
+        <button
+        class="theme-btn"
+        onclick="toggleThemeMenu()">
+        
+        <i class="fas fa-palette"></i>
+        
+        </button>
+        
+        <div
+        class="theme-options"
+        id="themeOptions">
+        
+        <button onclick="setTheme('light')">
+        ☀ Light
+        </button>
+        
+        <button onclick="setTheme('dark')">
+        🌙 Dark
+        </button>
+        
+        </div>
+        
+        </div>
+        
+        </nav>
+        
+        <!-- MOBILE MENU ICON -->
+        
+        <div class="menu-icon"
+        onclick="toggleMenu()">
+        
+        <i class="fas fa-bars"></i>
+        
+        </div>
+        
+        </div>
+        
+        </header>
+        
+        <!-- ========================================= -->
+        <!-- MOBILE MENU -->
+        <!-- ========================================= -->
+        
+        <div
+        class="mobile-menu"
+        id="mobileMenu">
+        
+        <a href="homepage.html">🏠 Home</a>
+        
+        <a href="gallery.html">🛍 Collections</a>
+        
+        <a href="services.html">🧵 Services</a>
+        
+        <a href="dashboard.html">📦 Dashboard</a>
+        
+        <a href="about.html">👑 About</a>
+        
+        <a href="blog.html">📰 Blog</a>
+        
+        <a href="contact.html">📞 Contact</a>
+        
+        <a href="privacy.html">🔒 Privacy Policy</a>
+        
+        <a href="refunds.html">💳 Refund Policy</a>
+        
+        <a href="shipping.html">🚚 Shipping</a>
+        
+        <a href="size-guide.html">📏 Size Guide</a>
+                
+        
+        <div class="mobile-theme">
+        
+        <button onclick="setTheme('light')">
+        ☀ Light Mode
+        </button>
+        
+        <button onclick="setTheme('dark')">
+        🌙 Dark Mode
+        </button>
+        
+        </div>
+        </div>
+        
+        </div>
+        
+        <!-- ========================================= -->
+        <!-- CART SIDEBAR -->
+        <!-- ========================================= -->
+        
+        <div
+        class="cart-sidebar"
+        id="cartSidebar">
+        
+        <div class="cart-top">
+        
+        <h2>Your Cart</h2>
+        
+        <button
+        class="close-cart"
+        onclick="toggleCart()">
+        
+        ✖
+        
+        </button>
+        
+        </div>
+        
+        <div id="cartItems"></div>
+        
+        <button
+        class="checkout-btn"
+        onclick="goToBooking()">
+        
+        Proceed To Checkout
+        
+        </button>
+        
+        </div>
+    <section class="services-hero">
+
+            <h1>Our Premium Services</h1>
+            
+            <p>
+            Luxury tailoring crafted with precision, elegance and attention to detail.
+            </p>
+            
+    </section>
+
+    <section class="services-grid">
+
+            <div class="service-card">
+            <h3>👗 Custom Tailoring</h3>
+            <p>Luxury outfits designed specifically to your measurements and style.</p>
+            </div>
+            
+            <div class="service-card">
+            <h3>💍 Bridal Wear</h3>
+            <p>Elegant bridal gowns and wedding attire for your special day.</p>
+            </div>
+            
+            <div class="service-card">
+            <h3>🎉 Event & Party Dresses</h3>
+            <p>Premium dresses for birthdays, parties and red-carpet occasions.</p>
+            </div>
+            
+            <div class="service-card">
+            <h3>👔 Senator & Corporate Wear</h3>
+            <p>Professional and traditional outfits with premium finishing.</p>
+            </div>
+            
+            <div class="service-card">
+            <h3>🧵 Fabric Consultation</h3>
+            <p>Expert guidance on fabrics, colours and fashion combinations.</p>
+            </div>
+            
+            <div class="service-card">
+            <h3>🚚 Nationwide Delivery</h3>
+            <p>Safe and reliable delivery to customers across Nigeria.</p>
+            </div>
+            
+    </section>
+    <section class="why-us">
+
+        <h2>Why Choose IKE-STITCHES?</h2>
+        
+        <div class="features">
+        
+        <div>
+        <h3>⭐ Premium Quality</h3>
+        <p>Every stitch is carefully crafted for perfection.</p>
+        </div>
+        
+        <div>
+        <h3>📏 Perfect Fit</h3>
+        <p>Tailored specifically to your body measurements.</p>
+        </div>
+        
+        <div>
+        <h3>🎨 Unique Designs</h3>
+        <p>Modern fashion blended with timeless elegance.</p>
+        </div>
+        
+        <div>
+        <h3>⏰ Timely Delivery</h3>
+        <p>Your outfit is delivered on schedule.</p>
+        </div>
+        
+        </div>
+        
+    </section>
+    <section class="service-process">
+
+        <h2>How We Work</h2>
+        
+        <div class="process-steps">
+        
+        <div>
+        <h3>1</h3>
+        <p>Consultation</p>
+        </div>
+        
+        <div>
+        <h3>2</h3>
+        <p>Measurements</p>
+        </div>
+        
+        <div>
+        <h3>3</h3>
+        <p>Tailoring</p>
+        </div>
+        
+        <div>
+        <h3>4</h3>
+        <p>Quality Check</p>
+        </div>
+        
+        <div>
+        <h3>5</h3>
+        <p>Delivery</p>
+        </div>
+        
+        </div>
+        
+    </section>
+    <section class="testimonials">
+
+        <h2>What Our Clients Say</h2>
+        
+        <div class="testimonial-card">
+        
+        <p>
+        "The fitting was perfect and the finishing was exceptional."
+        </p>
+        
+        <h4>- Happy Client</h4>
+        
+        </div>
+        
+        <div class="testimonial-card">
+        
+        <p>
+        "I received compliments throughout my event."
+        </p>
+        
+        <h4>- Satisfied Customer</h4>
+        
+        </div>
+        
+    </section>
+    <section class="services-cta">
+
+        <h2>Ready For Your Dream Outfit?</h2>
+        
+        <p>
+        Book a consultation today and let us bring your fashion vision to life.
+        </p>
+        
+        <a href="booking.html" class="btn">
+        Book Now
+        </a>
+        
+    </section>
+
+<footer class="footer">
+    <div class="footer-content">
+    
+    <div>
+    <img src="logo.png">
+    <h3>IKE-STITCHES</h3>
+    <p>Premium custom tailoring with perfect fit.</p>
+    </div>
+    
+    <div>
+    <h4>Links</h4>
+    <a href="homepage.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Order</a>
+    </div>
+    <div>
+    <h4>Customer Care</h4>
+
+    <a href="privacy.html">Privacy Policy</a>
+
+    <a href="refunds.html">Refund Policy</a>
+
+    <a href="terms.html">Terms Of Service</a>
+
+    <a href="shipping.html">Shipping Policy</a>
+
+    <a href="size-guide.html">Size Guide</a>
+    </div>
+    <div>
+    <h4>Contact</h4>
+    <p>📞 <a href="tel:+2348109174369">+2348109174369</a></p>
+    <p>📧 <a href="mailto:adepojufolashadeapeke@gmail.com">Email Us</a></p>
+    <p>📍 Lagos, Nigeria</p>
+    </div>
+    <div>
+        <h4>Follow Us</h4>
+        
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        
+        </div>
+   
+</div>
+<div class="footer-bottom">
+    © 2026 IKE-STITCHES. All rights reserved.
+    </div>
+    </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | IKE-STITCHES</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+<div class="auth-box">
+
+<h2>Create Account</h2>
+
+<input
+id="name"
+placeholder="Full Name">
+
+<input
+id="email"
+type="email"
+placeholder="Email Address">
+
+<div class="password-wrap">
+
+<input
+id="password"
+type="password"
+placeholder="Password">
+
+<i class="fas fa-eye password-toggle"
+onclick="togglePassword('password')"></i>
+
+</div>
+
+<button
+id="registerBtn"
+onclick="register()">
+
+Register
+
+</button>
+Create Account
+
+</button>
+
+<p style="margin-top:20px;">
+
+Already have an account?
+
+<a href="login.html"
+style="color:gold;">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<script src="auth.js"></script>
+<div id="toastBox"></div>
+</body>
+
+</html>

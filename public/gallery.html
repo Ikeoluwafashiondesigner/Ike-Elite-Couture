@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<meta
+name="description"
+content="IKE-ELITE-COUTURE - Premium luxury fashion brand in Nigeria. Custom tailoring, bridal wear, Ankara styles, corset dresses and nationwide delivery.">
+
+<title>IKE-ELITE-COUTURE | Gallery</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="main-header">
+
+        <div class="header-left">
+        
+        <div class="cart-icon"
+        onclick="toggleCart()">
+        
+        <i class="fas fa-bag-shopping"></i>
+        
+        <span id="cartCount">0</span>
+        
+        </div>
+        
+        </div>
+        
+        <!-- BRAND -->
+        
+        <div class="brand-area">
+        
+        <img
+        src="logo.png"
+        alt="IKE STITCHES Logo"
+        class="logo">
+        
+        <div class="brand-text">
+        
+        <h1 class="brand-title">
+        IKE-STITCHES
+        </h1>
+        
+        <p class="brand-subtitle">
+        Luxury Fashion Brand
+        </p>
+        
+        </div>
+        
+        </div>
+        
+        <!-- RIGHT -->
+        
+        <div class="header-right">
+        
+        <!-- DESKTOP NAV -->
+        
+        <nav class="navbar">
+        
+        <a href="index.html">Home</a>
+        
+        <div class="nav-dropdown">
+        
+        <button class="nav-drop-btn">
+        Collections ▼
+        </button>
+        
+        <div class="nav-dropdown-content">
+        
+        <a href="gallery.html">All Collections</a>
+        
+        <a href="gallery.html">Luxury Gowns</a>
+        
+        <a href="gallery.html">Ankara Styles</a>
+        
+        <a href="gallery.html">Corset Dresses</a>
+        
+        <a href="gallery.html">Bridal Wear</a>
+        
+        </div>
+        
+        </div>
+        
+        <div class="nav-dropdown">
+        
+        <button class="nav-drop-btn">
+        Shop ▼
+        </button>
+        
+        <div class="nav-dropdown-content">
+        
+        <a href="services.html">All Services</a>
+        
+        <a href="booking.html">Book Outfit</a>
+        
+        <a href="product.html">Ready To Wear</a>
+        
+        </div>
+        
+        </div>
+        
+        <a href="services.html">Services</a>
+        
+        <a href="about.html">About</a>
+        
+        <a href="blog.html">Blog</a>
+        
+        <a href="contact.html">Contact</a>
+        
+        <a href="dashboard.html">Dashboard</a>
+        
+        <!-- THEME -->
+        
+        <div class="theme-dropdown">
+        
+        <button
+        class="theme-btn"
+        onclick="toggleThemeMenu()">
+        
+        <i class="fas fa-palette"></i>
+        
+        </button>
+        
+        <div
+        class="theme-options"
+        id="themeOptions">
+        
+        <button onclick="setTheme('light')">
+        ☀ Light
+        </button>
+        
+        <button onclick="setTheme('dark')">
+        🌙 Dark
+        </button>
+        
+        </div>
+        
+        </div>
+        
+        </nav>
+        
+        <!-- MOBILE MENU ICON -->
+        
+        <div class="menu-icon"
+        onclick="toggleMenu()">
+        
+        <i class="fas fa-bars"></i>
+        
+        </div>
+        
+        </div>
+        
+        </header>
+        
+        <!-- ========================================= -->
+        <!-- MOBILE MENU -->
+        <!-- ========================================= -->
+        
+        <div
+        class="mobile-menu"
+        id="mobileMenu">
+        
+        <a href="index.html">🏠 Home</a>
+        
+        <a href="gallery.html">🛍 Collections</a>
+        
+        <a href="services.html">🧵 Services</a>
+        
+        <a href="dashboard.html">📦 Dashboard</a>
+        
+        <a href="about.html">👑 About</a>
+        
+        <a href="blog.html">📰 Blog</a>
+        
+        <a href="contact.html">📞 Contact</a>
+        
+        <a href="privacy.html">🔒 Privacy Policy</a>
+        
+        <a href="refunds.html">💳 Refund Policy</a>
+        
+        <a href="shipping.html">🚚 Shipping</a>
+        
+        <a href="size-guide.html">📏 Size Guide</a>
+        
+        <div class="mobile-theme">
+        
+        <button onclick="setTheme('light')">
+        ☀ Light Mode
+        </button>
+        
+        <button onclick="setTheme('dark')">
+        🌙 Dark Mode
+        </button>
+        
+        </div>
+        
+        </div>
+        
+        <!-- ========================================= -->
+        <!-- CART SIDEBAR -->
+        <!-- ========================================= -->
+        
+        <div
+        class="cart-sidebar"
+        id="cartSidebar">
+        
+        <div class="cart-top">
+        
+        <h2>Your Cart</h2>
+        
+        <button
+        class="close-cart"
+        onclick="toggleCart()">
+        
+        ✖
+        
+        </button>
+        
+        </div>
+        
+        <div id="cartItems"></div>
+        
+        <button
+        class="checkout-btn"
+        onclick="goToBooking()">
+        
+        Proceed To Checkout
+        
+        </button>
+        
+    </div>
+
+<!-- ================= HERO ================= -->
+
+<section class="gallery-hero">
+
+<div class="gallery-hero-content">
+
+<h1>
+Our Fashion Collections
+</h1>
+
+<p>
+Explore luxury custom outfits crafted with elegance,
+precision and premium finishing.
+</p>
+
+<a href="#galleryGrid"
+class="btn">
+
+Explore Gallery
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= FILTERS ================= -->
+
+<section class="gallery-filters">
+
+<h2 class="section-title">
+Browse Styles
+</h2>
+
+<div class="filter-buttons">
+
+    <button onclick="filterGallery('all')">
+        All
+        </button>
+        
+        <button onclick="filterGallery('gown')">
+        Gowns
+        </button>
+        
+        <button onclick="filterGallery('ankara')">
+        Ankara
+        </button>
+        <button onclick="filterGallery('lace')">
+        Lace
+        </button>        
+        <button onclick="filterGallery('corset')">
+        Corset
+        </button>
+        <button onclick="filterGallery('babylace')">
+        Baby Lace
+        </button>
+        <button onclick="filterGallery('babygown')">
+        Baby Gowns
+        </button>
+        <button onclick="filterGallery('bridal')">
+        Bridal
+        </button>
+        <button onclick="filterGallery('set')">
+        Two Piece Sets
+        </button>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section"
+id="galleryGrid">
+<div class="gallery-grid"></div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="gallery-cta">
+
+<h2>
+Need A Custom Design?
+</h2>
+
+<p>
+We create outfits tailored perfectly to your size,
+style and special occasions.
+</p>
+
+<a href="booking.html"
+class="btn">
+
+Book Your Outfit
+
+</a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<div>
+
+<img src="logo.png"
+alt="IKE-STITCHES Logo">
+
+<h3>
+IKE-STITCHES
+</h3>
+
+<p>
+Premium custom tailoring with perfect fit.
+</p>
+
+</div>
+
+<div>
+
+<h4>
+Quick Links
+</h4>
+
+<a href="homepage.html">Home</a>
+
+<a href="gallery.html">Gallery</a>
+
+<a href="services.html">Services</a>
+
+<a href="booking.html">Book Outfit</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h4>
+Customer Care
+</h4>
+
+<a href="privacy.html">Privacy Policy</a>
+
+<a href="refunds.html">Refund Policy</a>
+
+<a href="terms.html">Terms Of Service</a>
+
+<a href="shipping.html">Shipping Policy</a>
+
+<a href="size-guide.html">Size Guide</a>
+
+</div>
+
+<div>
+
+<h4>
+Contact</h4>
+
+<p>
+📞
+<a href="tel:+2348109174369">
++2348109174369
+</a>
+</p>
+
+<p>
+📧
+<a href="mailto:adepojufolashadeapeke@gmail.com">
+Email Us
+</a>
+</p>
+
+<p>
+📍 Lagos, Nigeria
+</p>
+
+</div>
+
+<div>
+
+<h4>
+Follow Us
+</h4>
+
+<a href="#">
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+</a>
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+Facebook
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+Instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 IKE-ELITE-COUTURE.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script src="cart.js"></script>
+
+<script src="styles.js"></script>
+
+
+<script src="gallery.js"></script>
+
+<script>
+
+    document.querySelectorAll(".nav-drop-btn").forEach(button=>{
+    
+    button.addEventListener("click",function(e){
+    
+    e.preventDefault();
+    
+    const parent=this.parentElement;
+    
+    document.querySelectorAll(".nav-dropdown").forEach(drop=>{
+    
+    if(drop!==parent){
+    drop.classList.remove("active");
+    }
+    
+    });
+    
+    parent.classList.toggle("active");
+    
+    });
+    
+    });
+    
+</script>
+<div id="toastBox"></div>
+<script>
+
+    document.addEventListener("DOMContentLoaded",()=>{
+        const imageCounter =
+    document.getElementById("imageCounter");
+
+    function updateCounter(){
+
+    imageCounter.textContent =
+    `${currentIndex + 1} / ${galleryImages.length}`;
+
+    }
+    
+    const popup =
+    document.getElementById("imagePopup");
+    
+    const popupImg =
+    document.getElementById("popupImg");
+    
+    const closePopup =
+    document.getElementById("closePopup");
+    
+    const prevBtn =
+    document.getElementById("prevBtn");
+    
+    const nextBtn =
+    document.getElementById("nextBtn");
+    
+    let currentIndex = 0;
+    let galleryImages = [];
+    
+    document.body.addEventListener("click",(e)=>{
+    
+    if(
+    e.target.tagName==="IMG" &&
+    !e.target.closest("#imagePopup")
+    ){
+    
+    galleryImages =
+    Array.from(document.querySelectorAll("img"))
+    .filter(img=>img.id!=="popupImg");
+    
+    currentIndex =
+    galleryImages.indexOf(e.target);
+    
+    popup.style.display="flex";
+    
+    popupImg.src =
+    galleryImages[currentIndex].src;
+    popupImg.style.opacity = "1";
+    
+    }
+    
+    });
+    
+    nextBtn.addEventListener("click",()=>{
+        let nextIndex =
+(currentIndex + 1) % galleryImages.length;
+
+changeImage(nextIndex);
+    
+
+    
+    prevBtn.addEventListener("click",()=>{
+    
+        let prevIndex =
+(currentIndex - 1 + galleryImages.length)
+% galleryImages.length;
+
+changeImage(prevIndex);
+    
+    popupImg.src =
+    galleryImages[currentIndex].src;
+    updateCounter();
+    });
+    
+    closePopup.addEventListener("click",()=>{
+    
+    popup.style.display="none";
+    
+    });
+    
+    popup.addEventListener("click",(e)=>{
+    
+    if(e.target===popup){
+    
+    popup.style.display="none";
+    
+    }
+    
+    });
+});
+    let startX = 0;
+
+popupImg.addEventListener("touchstart",(e)=>{
+
+startX = e.touches[0].clientX;
+
+});
+
+popupImg.addEventListener("touchend",(e)=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+
+nextBtn.click();
+
+}
+
+if(endX - startX > 50){
+
+prevBtn.click();
+
+}
+function changeImage(newIndex){
+
+popupImg.style.opacity = "1";
+
+setTimeout(()=>{
+
+currentIndex = newIndex;
+
+popupImg.src =
+galleryImages[currentIndex].src;
+
+updateCounter();
+
+popupImg.style.opacity = "1";
+
+},200);
+
+}
+});
+document.addEventListener("keydown",(e)=>{
+
+if(
+document.getElementById("imagePopup")
+.style.display !== "flex"
+){
+return;
+}
+
+if(e.key==="ArrowRight"){
+
+nextBtn.click();
+
+}
+
+if(e.key==="ArrowLeft"){
+
+prevBtn.click();
+
+}
+
+if(e.key==="Escape"){
+
+popup.style.display="none";
+
+}
+
+});
+    
+    });
+    
+</script>
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup">
+
+    <span id="closePopup">&times;</span>
+    
+    <button id="prevBtn">&#10094;</button>
+    
+    <img id="popupImg">
+    
+    <button id="nextBtn">&#10095;</button>
+    
+    <div id="imageCounter"></div>
+    
+</div>
+<div id="quickViewModal">
+
+<div class="quick-view-box">
+
+<span id="closeQuickView">&times;</span>
+
+<img id="quickViewImg">
+
+<h2 id="quickViewTitle"></h2>
+
+<p id="quickViewPrice"></p>
+
+<button id="quickViewCartBtn">
+Add To Cart
+</button>
+
+</div>
+</div>
+</body>
+
+</html>
