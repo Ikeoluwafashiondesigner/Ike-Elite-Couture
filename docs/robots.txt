@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ikeoluwafashiondesigner.github.io/Ike-Elite-Couture/sitemap.xml
