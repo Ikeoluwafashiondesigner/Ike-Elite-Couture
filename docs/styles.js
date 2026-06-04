@@ -1,4 +1,4 @@
-const allStylesSafe = [
+const allStyles = [
 
     {
     id:"ankara1",
