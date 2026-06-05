@@ -113,7 +113,7 @@ function payWithPaystack() {
 
     const handler = PaystackPop.setup({
 
-        key: "pk_live_xxxxxxxxxxxxxxxxx", // replace with real key
+        key: "pk_live_838a6bf87b4e14306f929ba4b26e2cf4e423d8d9", // replace with real key
 
         email: email,
         amount: total * 100,
