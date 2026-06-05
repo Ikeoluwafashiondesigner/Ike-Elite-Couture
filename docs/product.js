@@ -453,7 +453,7 @@ typeof allStyles !== "undefined"
     }
   
     const style =
-    allStyles.find(
+    allStylesSafe.find(
     item => item.id === styleKey
     );
   
