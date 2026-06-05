@@ -2,7 +2,10 @@
 // GALLERY SCRIPT
 // IKE-STITCHES
 // ============================================
-
+const allStylesSafe =
+typeof allStyles !== "undefined"
+? allStyles
+: [];
 // ============================================
 // STYLE DATABASE
 // ============================================
@@ -16,21 +19,27 @@
     // OPEN PRODUCT PAGE
     // ============================================
     
-    function openProduct(styleKey){
-        const style =
-        allStylesSafe.find(
-        item => item.id === styleKey
-        );
+function openProduct(styleKey){
 
-        localStorage.setItem(
-        "styleKey",
-        styleKey
-        );
-        
-        window.location.href =
-        "product.html";
-        
-        }
+    console.log("Clicked:", styleKey);
+
+    if(!styleKey){
+        showToast("No style selected");
+        return;
+    }
+
+    const style = allStyles.find(item => item.id === styleKey);
+
+    if(!style){
+        console.log("Style not found:", styleKey);
+        showToast("Style not found");
+        return;
+    }
+
+    localStorage.setItem("styleKey", styleKey);
+
+    window.location.href = "product.html";
+}
     
     // ============================================
     // UPDATE CART COUNT
@@ -388,12 +397,23 @@ function loadGallery(styles){
         
         }
         
+const closeBtn =
+document.getElementById("closeQuickView");
+
+if(closeBtn){
+
+        closeBtn.addEventListener("click",()=>{
+
         document
-        .getElementById("closeQuickView")
-        .addEventListener("click",()=>{
+        .getElementById("quickViewModal")
+        .style.display="none";
+
+        });
+
+        }
         
         document
         .getElementById("quickViewModal")
         .style.display="none";
         
-    });
+;
