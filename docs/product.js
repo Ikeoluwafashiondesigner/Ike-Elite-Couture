@@ -502,4 +502,22 @@ typeof allStyles !== "undefined"
   
     }
   );
-  
+function toastBox(message){
+
+    const toast =
+    document.getElementById("toast");
+
+    if(!toast){
+        alert(message);
+        return;
+    }
+
+    toast.innerText = message;
+
+    toast.classList.add("show-toast");
+
+    setTimeout(()=>{
+        toast.classList.remove("show-toast");
+    },3000);
+
+}
