@@ -87,6 +87,10 @@ function loadBookingItems() {
 // ============================================
 
 function payWithPaystack() {
+    if (typeof PaystackPop === "undefined") {
+    showToast("Payment system not loaded. Refresh page.");
+    return;
+    }
 
     const email = document.getElementById("email")?.value;
     const quantity = parseInt(document.getElementById("quantity")?.value) || 1;
