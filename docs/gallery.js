@@ -412,8 +412,10 @@ if(closeBtn){
 
         }
         
-        document
-        .getElementById("quickViewModal")
-        .style.display="none";
-        
+const quickViewModal =
+document.getElementById("quickViewModal");
+
+if(quickViewModal){
+    quickViewModal.style.display = "none";
+}       
 ;
