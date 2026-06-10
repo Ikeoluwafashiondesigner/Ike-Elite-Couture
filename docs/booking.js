@@ -114,7 +114,10 @@ function payWithPaystack() {
     if (paymentType === "half") {
         total = total / 2;
     }
-
+    console.log({
+        email,
+        amount: total * 100
+    });
     const handler = PaystackPop.setup({
 
         key: "pk_live_838a6bf87b4e14306f929ba4b26e2cf4e423d8d9", // replace with real key
@@ -124,7 +127,7 @@ function payWithPaystack() {
         currency: "NGN",
         ref: "IKE_" + Date.now(),
 
-        callback: async function (response) {
+        callback: function (response) {
 
             try {
         
