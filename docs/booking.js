@@ -118,62 +118,18 @@ function payWithPaystack() {
         email,
         amount: total * 100
     });
-    const handler = PaystackPop.setup({
+const handler = PaystackPop.setup({
+    key: "pk_live_838a6bf87b4e14306f929ba4b26e2cf4e423d8d9",
+    email: email,
+    amount: total * 100,
+    currency: "NGN",
+    ref: "IKE_" + Date.now(),
 
-        key: "pk_live_838a6bf87b4e14306f929ba4b26e2cf4e423d8d9", // replace with real key
-
-        email: email,
-        amount: total * 100,
-        currency: "NGN",
-        ref: "IKE_" + Date.now(),
-
-        callback:async function (response) {
-
-            try {
-        
-                const token = localStorage.getItem("token");
-        
-                if (!token) {
-                    showToast("Login required");
-                    return;
-                }
-        
-                // 1. VERIFY PAYMENT
-                const verify = await fetch("https://ike-elite-backend.onrender.com/api/verify-payment", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer " + token
-                    },
-                    body: JSON.stringify({
-                        reference: response.reference
-                    })
-                });
-        
-                const verifyData = await verify.json();
-        
-                if (!verifyData.success) {
-                    showToast("Payment failed verification");
-                    return;
-                }
-        
-                // 2. SAVE ORDER TO BACKEND
-                await saveOrder(response.reference);
-        
-                // 3. CLEAR CART (IMPORTANT)
-                localStorage.removeItem("cart");
-        
-                // 4. SUCCESS UI
-                showSuccessModal();
-        
-                showToast("Order placed successfully");
-        
-            } catch (err) {
-                console.error(err);
-                showToast("Error completing payment");
-            }
-        }
-    });
+    callback: function(response){
+        alert("SUCCESS");
+        console.log(response);
+    }
+});
 
     handler.openIframe();
 }
