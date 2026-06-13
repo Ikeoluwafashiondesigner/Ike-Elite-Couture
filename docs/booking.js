@@ -125,10 +125,41 @@ function payWithPaystack() {
     currency: "NGN",
     ref: "IKE_" + Date.now(),
 
-    callback: function(response){
-        alert("SUCCESS");
-        console.log(response);
-    }
+callback: function(response) {
+
+    console.log("PAYSTACK RESPONSE:", response);
+
+    const reference = response.reference;
+
+    fetch("https://ike-elite-backend.onrender.com/api/verify-payment", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ reference })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+
+            // NOW save order
+            saveOrder(reference).then(() => {
+
+                alert("Payment Successful!");
+                window.location.href = "success.html";
+
+            });
+
+        } else {
+            alert("Payment verification failed");
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Error verifying payment");
+    });
+}
 });
 
     handler.openIframe();
