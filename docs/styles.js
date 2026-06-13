@@ -8,7 +8,7 @@ const allStyles = [
     image:"ankara1.png",
     rating:4.9,
     badge:"Trending",
-    description:"Luxury Ankara armless fitted style."
+    description:"Luxury Ankara armless fitted gown style."
     },
     
     {
