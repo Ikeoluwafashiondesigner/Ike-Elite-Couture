@@ -118,7 +118,7 @@ function payWithPaystack() {
         email,
         amount: total * 100
     });
-const handler = PaystackPop.setup({
+    const handler = PaystackPop.setup({
     key: "pk_live_838a6bf87b4e14306f929ba4b26e2cf4e423d8d9",
     email: email,
     amount: total * 100,
