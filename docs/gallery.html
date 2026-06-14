@@ -607,6 +607,13 @@ changeImage(prevIndex);
     popup.style.display="none";
     
     }
+        popup.onclick = function(e){
+    
+    if(e.target === popup){
+    
+    popup.style.display = "none";
+    
+    }
     
     });
 });

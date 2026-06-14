@@ -291,3 +291,10 @@ async function saveOrder(reference) {
 
     console.log("Order saved:", data);
 }
+    popup.onclick = function(e){
+    
+    if(e.target === popup){
+    
+    popup.style.display = "none";
+    
+    }
