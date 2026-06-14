@@ -92,14 +92,25 @@ function payWithPaystack() {
     return;
     }
 
-    const email = document.getElementById("email")?.value;
-    const quantity = parseInt(document.getElementById("quantity")?.value) || 1;
-    const paymentType = document.getElementById("paymentType")?.value || "full";
+const email = document.getElementById("email")?.value;
+const quantity = parseInt(document.getElementById("quantity")?.value) || 1;
+const paymentType = document.getElementById("paymentType")?.value || "full";
 
-    if (!email) {
-        showToast("Enter email");
-        return;
-    }
+if (!email) {
+    showToast("Enter email");
+    return;
+}
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+
+if (cart.length > 0) {
+
+    cart.forEach(item => {
+        total += Number(item.price) * Number(item.qty || 1);
+    });
+
+} else {
 
     const styleKey = localStorage.getItem("styleKey");
     const style = allStylesSafe.find(s => s.id === styleKey);
@@ -109,11 +120,12 @@ function payWithPaystack() {
         return;
     }
 
-    let total = style.price * quantity;
+    total = style.price * quantity;
+}
 
-    if (paymentType === "half") {
-        total = total / 2;
-    }
+if (paymentType === "half") {
+    total = total / 2;
+}
     console.log({
         email,
         amount: total * 100
