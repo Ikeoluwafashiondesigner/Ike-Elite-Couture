@@ -137,7 +137,13 @@ color:white !important;
 
   color:white !important;
   
-  }
+}
+.qr-code {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+}
+
   
   /* ===================================== */
   /* PRODUCT PAGE TEXT */
