@@ -3237,3 +3237,12 @@ max-width:700px;
 font-size:1.2rem;
 margin-bottom:25px;
 }
+.hero-tag{
+background:gold;
+color:black;
+padding:8px 18px;
+border-radius:30px;
+font-weight:600;
+margin-bottom:15px;
+display:inline-block;
+}
