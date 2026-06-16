@@ -3183,22 +3183,29 @@ button {
   opacity: 1;
 }
 .hero-slider-section{
-height:60vh;
-max-height:550px;
+position:relative;
+height:85vh;
+overflow:hidden;
 }
-.hero-slider-section{
-background:#f5f5f5;
-}
+
 .slide{
-display:flex;
-justify-content:center;
-align-items:center;
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s ease;
+}
+
+.slide.active{
+opacity:1;
+z-index:1;
 }
 
 .slide img{
 width:100%;
 height:100%;
-object-fit:contain;
+object-fit:cover;
+object-position:center 15%;
 }
 
 .slide-overlay{
