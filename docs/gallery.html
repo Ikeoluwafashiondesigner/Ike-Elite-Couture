@@ -666,14 +666,6 @@ changeImage(prevIndex);
     popup.style.display="none";
     
     }
-        popup.onclick = function(e){
-    
-    if(e.target === popup){
-    
-    popup.style.display = "none";
-    
-    }
-    
     });
 });
     let startX = 0;
@@ -686,38 +678,36 @@ startX = e.touches[0].clientX;
 
 popupImg.addEventListener("touchend",(e)=>{
 
-let endX = e.changedTouches[0].clientX;
+    let endX =
+    e.changedTouches[0].clientX;
 
-if(startX - endX > 50){
+    if(startX - endX > 50){
+        nextBtn.click();
+    }
 
-nextBtn.click();
+    if(endX - startX > 50){
+        prevBtn.click();
+    }
 
-}
-
-if(endX - startX > 50){
-
-prevBtn.click();
-
-}
+});
 function changeImage(newIndex){
 
-popupImg.style.opacity = "1";
+    popupImg.style.opacity = "0";
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-currentIndex = newIndex;
+        currentIndex = newIndex;
 
-popupImg.src =
-galleryImages[currentIndex].src;
+        popupImg.src =
+        galleryImages[currentIndex].src;
 
-updateCounter();
+        updateCounter();
 
-popupImg.style.opacity = "1";
+        popupImg.style.opacity = "1";
 
-},200);
+    },200);
 
 }
-});
 document.addEventListener("keydown",(e)=>{
 
 if(

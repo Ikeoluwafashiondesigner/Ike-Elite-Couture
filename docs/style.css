@@ -3323,3 +3323,9 @@ border-radius:10px;
 background:white;
 padding:5px;
 }
+.gallery-categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    padding:40px 20px;
+}
