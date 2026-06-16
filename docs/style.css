@@ -3183,31 +3183,22 @@ button {
   opacity: 1;
 }
 .hero-slider-section{
-position:relative;
-height:85vh;
-overflow:hidden;
+height:60vh;
+max-height:550px;
 }
 
 .slide{
-position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:opacity 1s ease;
-}
-
-.slide.active{
-opacity:1;
-z-index:1;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .slide img{
-width:100%;
+width:auto;
 height:100%;
-object-fit:cover;
-object-position:center 15%;
+max-width:90%;
+object-fit:contain;
 }
-
 .slide-overlay{
 position:absolute;
 top:0;
