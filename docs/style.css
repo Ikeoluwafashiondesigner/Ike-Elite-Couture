@@ -3182,3 +3182,58 @@ button {
   transform: translateX(0);
   opacity: 1;
 }
+.hero-slider-section{
+position:relative;
+height:85vh;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s ease;
+}
+
+.slide.active{
+opacity:1;
+z-index:1;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.slide-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.45);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+color:white;
+}
+
+.slide-overlay h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.slide-overlay p{
+max-width:700px;
+font-size:1.2rem;
+margin-bottom:25px;
+}
