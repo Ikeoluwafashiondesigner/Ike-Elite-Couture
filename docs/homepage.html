@@ -1103,5 +1103,219 @@ target="_blank">
     };
     
 </script>
+<!-- ================= FLOATING AI CHAT ================= -->
+<div id="ai-float-btn">🤖</div>
+
+<div id="ai-chatbox">
+  <div id="ai-header">
+      <span>IKE ELITE AI Assistant</span>
+          <button id="ai-close">×</button>
+            </div>
+            
+              <div id="ai-messages"></div>
+              
+                <div id="ai-input-area">
+                    <input id="ai-input" placeholder="Ask about designs, prices..." />
+                        <button onclick="sendAI()">➤</button>
+                          </div>
+                          
+                            <div id="ai-footer">
+                                <button onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
+                                  </div>
+                                  </div>
+                                  
+                                  <style>
+                                  /* ===== FLOAT BUTTON ===== */
+                                  #ai-float-btn {
+                                    position: fixed;
+                                      bottom: 90px;
+                                        right: 20px;
+                                          width: 55px;
+                                            height: 55px;
+                                              background: black;
+                                                color: white;
+                                                  font-size: 24px;
+                                                    border-radius: 50%;
+                                                      display: flex;
+                                                        align-items: center;
+                                                          justify-content: center;
+                                                            cursor: pointer;
+                                                              z-index: 9999;
+                                                                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                                                                }
+                                                                
+                                                                /* ===== CHAT BOX ===== */
+                                                                #ai-chatbox {
+                                                                  position: fixed;
+                                                                    bottom: 150px;
+                                                                      right: 20px;
+                                                                        width: 320px;
+                                                                          height: 420px;
+                                                                            background: #fff;
+                                                                              border-radius: 15px;
+                                                                                box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+                                                                                  display: none;
+                                                                                    flex-direction: column;
+                                                                                      overflow: hidden;
+                                                                                        z-index: 9999;
+                                                                                          font-family: Arial, sans-serif;
+                                                                                          }
+                                                                                          
+                                                                                          /* HEADER */
+                                                                                          #ai-header {
+                                                                                            background: black;
+                                                                                              color: white;
+                                                                                                padding: 12px;
+                                                                                                  display: flex;
+                                                                                                    justify-content: space-between;
+                                                                                                      align-items: center;
+                                                                                                        font-weight: bold;
+                                                                                                        }
+                                                                                                        
+                                                                                                        #ai-close {
+                                                                                                          background: none;
+                                                                                                            border: none;
+                                                                                                              color: white;
+                                                                                                                font-size: 18px;
+                                                                                                                  cursor: pointer;
+                                                                                                                  }
+                                                                                                                  
+                                                                                                                  /* MESSAGES */
+                                                                                                                  #ai-messages {
+                                                                                                                    flex: 1;
+                                                                                                                      padding: 10px;
+                                                                                                                        overflow-y: auto;
+                                                                                                                          font-size: 14px;
+                                                                                                                          }
+                                                                                                                          
+                                                                                                                          .msg {
+                                                                                                                            margin: 8px 0;
+                                                                                                                              padding: 8px 10px;
+                                                                                                                                border-radius: 10px;
+                                                                                                                                  max-width: 80%;
+                                                                                                                                  }
+                                                                                                                                  
+                                                                                                                                  .user {
+                                                                                                                                    background: #e6e6e6;
+                                                                                                                                      margin-left: auto;
+                                                                                                                                      }
+                                                                                                                                      
+                                                                                                                                      .ai {
+                                                                                                                                        background: #000;
+                                                                                                                                          color: white;
+                                                                                                                                          }
+                                                                                                                                          
+                                                                                                                                          /* INPUT */
+                                                                                                                                          #ai-input-area {
+                                                                                                                                            display: flex;
+                                                                                                                                              border-top: 1px solid #ddd;
+                                                                                                                                              }
+                                                                                                                                              
+                                                                                                                                              #ai-input {
+                                                                                                                                                flex: 1;
+                                                                                                                                                  padding: 10px;
+                                                                                                                                                    border: none;
+                                                                                                                                                      outline: none;
+                                                                                                                                                      }
+                                                                                                                                                      
+                                                                                                                                                      #ai-input-area button {
+                                                                                                                                                        background: black;
+                                                                                                                                                          color: white;
+                                                                                                                                                            border: none;
+                                                                                                                                                              padding: 10px 15px;
+                                                                                                                                                                cursor: pointer;
+                                                                                                                                                                }
+                                                                                                                                                                
+                                                                                                                                                                /* FOOTER */
+                                                                                                                                                                #ai-footer {
+                                                                                                                                                                  padding: 8px;
+                                                                                                                                                                    text-align: center;
+                                                                                                                                                                      border-top: 1px solid #eee;
+                                                                                                                                                                      }
+                                                                                                                                                                      
+                                                                                                                                                                      #ai-footer button {
+                                                                                                                                                                        background: #25D366;
+                                                                                                                                                                          color: white;
+                                                                                                                                                                            border: none;
+                                                                                                                                                                              padding: 8px;
+                                                                                                                                                                                width: 90%;
+                                                                                                                                                                                  border-radius: 8px;
+                                                                                                                                                                                    cursor: pointer;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    </style>
+                                                                                                                                                                                    
+                                                                                                                                                                                    <script>
+                                                                                                                                                                                    const floatBtn = document.getElementById("ai-float-btn");
+                                                                                                                                                                                    const chatbox = document.getElementById("ai-chatbox");
+                                                                                                                                                                                    const closeBtn = document.getElementById("ai-close");
+                                                                                                                                                                                    const messages = document.getElementById("ai-messages");
+                                                                                                                                                                                    
+                                                                                                                                                                                    floatBtn.onclick = () => {
+                                                                                                                                                                                      chatbox.style.display = "flex";
+                                                                                                                                                                                        floatBtn.style.display = "none";
+                                                                                                                                                                                          botMsg("Hello 👋 I’m Ike Elite AI. Ask me about designs, prices or orders.");
+                                                                                                                                                                                          };
+                                                                                                                                                                                          
+                                                                                                                                                                                          closeBtn.onclick = () => {
+                                                                                                                                                                                            chatbox.style.display = "none";
+                                                                                                                                                                                              floatBtn.style.display = "flex";
+                                                                                                                                                                                              };
+                                                                                                                                                                                              
+                                                                                                                                                                                              function addMsg(text, type) {
+                                                                                                                                                                                                let div = document.createElement("div");
+                                                                                                                                                                                                  div.classList.add("msg", type);
+                                                                                                                                                                                                    div.innerText = text;
+                                                                                                                                                                                                      messages.appendChild(div);
+                                                                                                                                                                                                        messages.scrollTop = messages.scrollHeight;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        function botMsg(text) {
+                                                                                                                                                                                                          setTimeout(() => addMsg(text, "ai"), 500);
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                          
+                                                                                                                                                                                                          function sendAI() {
+                                                                                                                                                                                                            let input = document.getElementById("ai-input");
+                                                                                                                                                                                                              let text = input.value;
+                                                                                                                                                                                                                if (!text) return;
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                  addMsg(text, "user");
+                                                                                                                                                                                                                    input.value = "";
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                      setTimeout(() => {
+                                                                                                                                                                                                                          addMsg(getReply(text), "ai");
+                                                                                                                                                                                                                            }, 600);
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                            function getReply(msg) {
+                                                                                                                                                                                                                              msg = msg.toLowerCase();
+                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                if (msg.includes("price") || msg.includes("cost")) {
+                                                                                                                                                                                                                                    return "Prices depend on design & fabric. Please chat us on WhatsApp for exact pricing 💬";
+                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                        if (msg.includes("order") || msg.includes("book")) {
+                                                                                                                                                                                                                                            return "You can place your order directly via WhatsApp. Tap the button below.";
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                if (msg.includes("location")) {
+                                                                                                                                                                                                                                                    return "We are based in Lagos, Nigeria 🇳🇬";
+                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                        if (msg.includes("delivery") || msg.includes("how long")) {
+                                                                                                                                                                                                                                                            return "Delivery usually takes a few days depending on design.";
+                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                if (msg.includes("services") || msg.includes("what do you sew")) {
+                                                                                                                                                                                                                                                                    return "We design gowns, Ankara outfits, bridal wear & custom fashion pieces ✨";
+                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                        return "I may not have full details on that. Please chat with us on WhatsApp for faster help 💬";
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                        function openWhatsApp() {
+                                                                                                                                                                                                                                                                          window.open("https://wa.me/2348109174369", "_blank");
+                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                          </script>
+                                                                                                                                                                                                                                                                          <!-- ================= END AI CHAT ================= -->-->
 </body>
 </html>
