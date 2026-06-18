@@ -309,3 +309,18 @@ window.open(
 );
 
 }
+document.addEventListener("click",(e)=>{
+
+if(
+chatbox.style.display === "flex" &&
+!chatbox.contains(e.target) &&
+e.target !== floatBtn
+){
+
+chatbox.style.display = "none";
+
+floatBtn.style.display = "flex";
+
+}
+
+});
