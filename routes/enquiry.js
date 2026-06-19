@@ -1,85 +1,32 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
+router.post("/contact", async (req, res) => {
 
-const router = express.Router();
-const enquiryRoutes = require("./routes/enquiry");
+  try {
 
-app.use("/api", enquiryRoutes);
-const transporter = nodemailer.createTransport({
-service: "gmail",
-auth: {
-user: process.env.EMAIL,
-pass: process.env.EMAIL_PASS
-}
-});
+    const { name, email, phone, style, date, message } = req.body;
 
-// ENQUIRY FORM
-router.post("/enquiry", async (req, res) => {
+    await transporter.sendMail({
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
+      subject: "New Enquiry Received",
+      html: `
+        <h2>New Enquiry</h2>
 
-try {
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone}</p>
+        <p><b>Style:</b> ${style}</p>
+        <p><b>Date:</b> ${date}</p>
 
-```
-const {
-  fullName,
-  email,
-  whatsapp,
-  eventDate,
-  outfitType,
-  delivery,
-  address,
-  info
-} = req.body;
+        <p><b>Message:</b></p>
+        <p>${message}</p>
+      `
+    });
 
-await transporter.sendMail({
+    res.json({ message: "Enquiry sent successfully" });
 
-  from: process.env.EMAIL,
-
-  to: process.env.EMAIL,
-
-  subject: "New Website Enquiry",
-
-  html: `
-  <h2>New Enquiry Received</h2>
-
-  <p><b>Name:</b> ${fullName}</p>
-
-  <p><b>Email:</b> ${email}</p>
-
-  <p><b>WhatsApp:</b> ${whatsapp}</p>
-
-  <p><b>Event Date:</b> ${eventDate}</p>
-
-  <p><b>Outfit Type:</b> ${outfitType}</p>
-
-  <p><b>Need Delivery:</b> ${delivery}</p>
-
-  <p><b>Address:</b> ${address}</p>
-
-  <p><b>Additional Information:</b></p>
-
-  <p>${info}</p>
-  `
-});
-
-res.json({
-  success: true,
-  message: "Enquiry sent successfully"
-});
-```
-
-} catch (err) {
-
-```
-console.log(err);
-
-res.status(500).json({
-  success: false,
-  message: "Failed to send enquiry"
-});
-```
-
-}
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Failed to send enquiry" });
+  }
 
 });
-
-module.exports = router;
