@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Make An Enquiry | IKE-ELITE-COUTURE</title>
+<title>Enquiry | IKE-ELITE-COUTURE</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,13 +12,8 @@
 <body>
 
 <section class="enquiry-hero">
-
-<h1>MAKE AN ENQUIRY</h1>
-
-<p>
-Tell us about the outfit you want and we'll get back to you.
-</p>
-
+    <h1>MAKE AN ENQUIRY</h1>
+    <p>Tell us about the outfit you want and we'll get back to you.</p>
 </section>
 
 <section class="enquiry-container">
@@ -28,134 +22,44 @@ Tell us about the outfit you want and we'll get back to you.
 
 <div class="form-group">
 <label>Full Name *</label>
-<input
-type="text"
-id="fullName"
-required>
+<input type="text" id="name" required>
 </div>
 
 <div class="form-group">
 <label>Email *</label>
-<input
-type="email"
-id="email"
-required></div>
+<input type="email" id="email" required>
+</div>
 
 <div class="form-group">
 <label>WhatsApp Number *</label>
-<input
-type="tel"
-id="whatsapp"
-required>
+<input type="tel" id="phone" required>
+</div>
+
+<!-- STYLE SELECT (FIXED) -->
+<div class="form-group">
+<label>Select Style *</label>
+<select id="styleSelect" required>
+<option value="">Loading styles...</option>
+</select>
 </div>
 
 <div class="form-group">
 <label>Event Date *</label>
-<input
-type="date"
-id="eventDate"
-required>
-</div>
-
-<div class="form-group">
-<label>Type Of Outfit *</label>
-
-
-<select required>
-
-<option value="">
-Select Outfit
-</option>
-
-<option>
-Bridal Dress
-</option>
-
-<option>
-Reception Dress
-</option>
-
-<option>
-Ankara Style
-</option>
-
-<option>
-Corset Dress
-</option>
-
-<option>
-Luxury Gown
-</option>
-
-<option>
-Birthday Outfit
-</option>
-
-<option>
-Children's Outfit
-</option>
-
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Need Delivery?</label>
-
-
-<select>
-
-<option>Yes</option>
-
-<option>No</option>
-
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Delivery Address</label>
-<textarea
-id="address">
-</textarea>
-
-<textarea rows="3"></textarea>
-
+<input type="date" id="date" required>
 </div>
 
 <div class="form-group">
 <label>Additional Information</label>
-<textarea
-id="info">
-</textarea>
-
-<textarea rows="5"></textarea>
-
+<textarea id="message" rows="5"></textarea>
 </div>
 
-<button type="submit" class="btn">
-Submit Enquiry
-</button>
+<button type="submit" class="btn">Submit Enquiry</button>
 
 </form>
 
 </section>
 
-<script>
-
-document
-.getElementById("enquiryForm")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-alert(
-"Thank you. Your enquiry has been received."
-);
-
-});
-
-</script>
 <script src="enquiry.js"></script>
+
 </body>
 </html>
