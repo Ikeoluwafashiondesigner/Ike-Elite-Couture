@@ -1,30 +1,28 @@
-document.getElementById("waitlistForm").addEventListener("submit", async function(e){
-e.preventDefault();
+document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-const data = {
-name: document.getElementById("name").value,
-email: document.getElementById("email").value,
-phone: document.getElementById("phone").value,
-interest: document.getElementById("interest").value
-};
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        reason: document.getElementById("reason").value
+    };
 
-try {
+    try {
 
-const res = await fetch("https://ike-elite-backend.onrender.com/api/waitlist", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify(data)
-});
+        const res = await fetch("https://ike-elite-backend.onrender.com/api/waitlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
 
-const result = await res.json();
+        const result = await res.json();
 
-alert(result.message || "Joined successfully!");
+        alert(result.message || "Joined waitlist");
 
-} catch (err) {
-console.log(err);
-alert("Failed to join waitlist");
-}
+        e.target.reset();
 
+    } catch (err) {
+        alert("Failed to join waitlist");
+    }
 });
