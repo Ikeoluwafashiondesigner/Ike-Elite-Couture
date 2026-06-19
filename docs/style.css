@@ -3602,3 +3602,86 @@ font-weight:700;
 text-decoration:none;
 border-radius:30px;
 }
+.shop-hero{
+position:relative;
+height:500px;
+overflow:hidden;
+}
+
+.shop-hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.shop-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:50px;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,.9)
+);
+color:white;
+}
+
+.shop-overlay h1{
+font-size:3rem;
+}
+
+.shop-search{
+padding:30px;
+text-align:center;
+}
+
+.shop-search input{
+width:90%;
+max-width:500px;
+padding:15px;
+border-radius:50px;
+border:none;
+outline:none;
+}
+
+.shop-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.shop-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.shop-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.shop-card h3{
+padding:15px;
+}
+
+.shop-card p{
+padding:0 15px;
+font-weight:700;
+color:goldenrod;
+}
+
+.shop-card button{
+margin:15px;
+padding:12px 20px;
+border:none;
+background:black;
+color:white;
+border-radius:30px;
+cursor:pointer;
+}

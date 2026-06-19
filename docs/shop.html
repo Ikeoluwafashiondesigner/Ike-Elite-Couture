@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Shop Luxury Fashion Styles
+</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="shop-hero">
+
+<img src="owner10.png">
+
+<div class="shop-overlay">
+
+<span>
+Luxury Fashion Store
+</span>
+
+<h1>
+SHOP OUR COLLECTION
+</h1>
+
+<p>
+Browse premium Ankara styles,
+corset dresses, gowns and bridal wear.
+</p>
+
+</div>
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="shop-search">
+
+<input
+type="text"
+id="shopSearch"
+placeholder="Search styles...">
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="shop-section">
+
+<div
+class="shop-grid"
+id="shopGrid">
+
+</div>
+
+</section>
+
+<script src="styles.js"></script>
+
+<script>
+
+const shopGrid =
+document.getElementById("shopGrid");
+
+function renderShop(items){
+
+shopGrid.innerHTML = "";
+
+items.forEach(style=>{
+
+shopGrid.innerHTML += `
+
+<div class="shop-card">
+
+<img src="${style.image}">
+
+<h3>${style.name}</h3>
+
+<p>
+₦${style.price.toLocaleString()}
+</p>
+
+<button
+onclick="viewStyle('${style.id}')">
+
+View Style
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderShop(allStylesSafe);
+
+document
+.getElementById("shopSearch")
+.addEventListener("keyup",e=>{
+
+const value =
+e.target.value.toLowerCase();
+
+const filtered =
+allStylesSafe.filter(style=>
+
+style.name.toLowerCase()
+.includes(value)
+
+||
+
+style.category.toLowerCase()
+.includes(value)
+
+);
+
+renderShop(filtered);
+
+});
+
+function viewStyle(id){
+
+window.location.href =
+`product.html?id=${id}`;
+
+}
+
+</script>
+
+</body>
+
+</html>
