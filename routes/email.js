@@ -2,7 +2,8 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 
 const router = express.Router();
-
+console.log("EMAIL:", process.env.EMAIL);
+console.log("HAS PASS:", !!process.env.EMAIL_PASS);
 const transporter = nodemailer.createTransport({
 
   service:"gmail",
