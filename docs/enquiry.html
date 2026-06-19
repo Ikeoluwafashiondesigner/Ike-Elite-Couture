@@ -28,26 +28,40 @@ Tell us about the outfit you want and we'll get back to you.
 
 <div class="form-group">
 <label>Full Name *</label>
-<input type="text" required>
+<input
+type="text"
+id="fullName"
+required>
 </div>
 
 <div class="form-group">
 <label>Email *</label>
-<input type="email" required>
-</div>
+<input
+type="email"
+id="email"
+required></div>
 
 <div class="form-group">
 <label>WhatsApp Number *</label>
-<input type="tel" required>
+<input
+type="tel"
+id="whatsapp"
+required>
 </div>
 
 <div class="form-group">
 <label>Event Date *</label>
-<input type="date" required>
+<input
+type="date"
+id="eventDate"
+required>
 </div>
 
 <div class="form-group">
 <label>Type Of Outfit *</label>
+<select
+id="outfitType"
+required>
 
 <select required>
 
@@ -90,6 +104,7 @@ Children's Outfit
 <div class="form-group">
 <label>Need Delivery?</label>
 
+
 <select>
 
 <option>Yes</option>
@@ -102,6 +117,9 @@ Children's Outfit
 
 <div class="form-group">
 <label>Delivery Address</label>
+<textarea
+id="address">
+</textarea>
 
 <textarea rows="3"></textarea>
 
@@ -109,6 +127,9 @@ Children's Outfit
 
 <div class="form-group">
 <label>Additional Information</label>
+<textarea
+id="info">
+</textarea>
 
 <textarea rows="5"></textarea>
 
@@ -137,6 +158,6 @@ alert(
 });
 
 </script>
-
+<script src="enquiry.js"></script>
 </body>
 </html>
