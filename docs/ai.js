@@ -292,6 +292,41 @@ return "❤️ Thank you. I'm always happy to help.";
 if(msg.includes("who are you")){
 return "I'm IKE ELITE AI 🤖, your fashion assistant.";
 }
+if(
+msg.includes("good night")
+){
+return "Good night 🌙. Thanks for visiting IKE-ELITE-COUTURE.";
+}
+
+if(
+msg.includes("how much")
+){
+return "Prices vary depending on style, fabric and measurements. Visit our pricing section or contact us on WhatsApp.";
+}
+
+if(
+msg.includes("owner")
+){
+return "IKE-ELITE-COUTURE is owned by Mrs. Folashade Adepoju.";
+}
+
+if(
+msg.includes("daniel")
+){
+return "Daniel Adepoju developed the website and digital platform for IKE-ELITE-COUTURE.";
+}
+
+if(
+msg.includes("instagram")
+){
+return "You can follow us on Instagram @mhz_folashade.";
+}
+
+if(
+msg.includes("contact")
+){
+return "Call or WhatsApp us on +2348109174369.";
+}
 
 /* DEFAULT */
 
