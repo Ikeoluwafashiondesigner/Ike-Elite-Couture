@@ -178,3 +178,50 @@ function toggleMobileTheme(){
   menu.classList.toggle("show-theme");
   
 }
+async function sendContact() {
+
+const name =
+document.getElementById("contactName").value;
+
+const email =
+document.getElementById("contactEmail").value;
+
+const message =
+document.getElementById("contactMessage").value;
+
+if(!name || !email || !message){
+
+showToast("Please fill all fields");
+return;
+
+}
+
+try{
+
+const res = await fetch(
+"https://ike-elite-backend.onrender.com/api/contact",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+name,
+email,
+message
+})
+}
+);
+
+const data = await res.json();
+
+showToast(data.message || "Message sent");
+
+}catch(err){
+
+console.error(err);
+
+showToast("Failed to send message");
+
+}
+}
