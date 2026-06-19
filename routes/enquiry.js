@@ -1,32 +1,41 @@
-router.post("/contact", async (req, res) => {
+const express = require("express");
+const nodemailer = require("nodemailer");
 
+const router = express.Router();
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASS
+  }
+});
+
+router.post("/", async (req, res) => {
   try {
 
-    const { name, email, phone, style, date, message } = req.body;
+    const { name, email, phone, style, message } = req.body;
 
     await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: "New Enquiry Received",
+      subject: "New Enquiry from Website",
       html: `
         <h2>New Enquiry</h2>
-
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Style:</b> ${style}</p>
-        <p><b>Date:</b> ${date}</p>
-
-        <p><b>Message:</b></p>
-        <p>${message}</p>
+        <p><b>Message:</b> ${message}</p>
       `
     });
 
-    res.json({ message: "Enquiry sent successfully" });
+    res.json({ success: true });
 
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Failed to send enquiry" });
+    res.status(500).json({ success: false });
   }
-
 });
+
+module.exports = router;

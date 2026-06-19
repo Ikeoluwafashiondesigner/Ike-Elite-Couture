@@ -9,6 +9,10 @@ const orderRoutes = require("./routes/order");
 const emailRoutes = require("./routes/email");
 const auth = require("./middleware/verifyToken");
 const app = express();
+const enquiryRoute = require("./routes/enquiry");
+const waitlistRoute = require("./routes/waitlist");
+app.use("/api/waitlist", waitlistRoute);
+app.use("/api/enquiry", enquiryRoute);
 
 app.use(cors());
 app.use(express.json());
