@@ -13,7 +13,15 @@ const transporter = nodemailer.createTransport({
   }
 
 });
+transporter.verify(function(error, success) {
 
+  if(error){
+    console.log("SMTP ERROR:", error);
+  }else{
+    console.log("SMTP READY");
+  }
+
+});
 
 // CONTACT EMAIL
 router.post("/contact", async(req,res)=>{
