@@ -1,57 +1,60 @@
-// LOAD STYLES INTO DROPDOWN
 document.addEventListener("DOMContentLoaded", () => {
 
-    const select = document.getElementById("styleSelect");
+```
+const form = document.getElementById("enquiryForm");
 
-    // IMPORTANT: this must exist in styles.js or backend
-    if (typeof allStyles !== "undefined") {
+if (!form) return;
 
-        select.innerHTML = `<option value="">Select Style</option>`;
+const styleName = localStorage.getItem("styleName");
 
-        allStyles.forEach(style => {
-            const opt = document.createElement("option");
-            opt.value = style.name;
-            opt.textContent = style.name;
-            select.appendChild(opt);
-        });
+if (styleName && document.getElementById("styleSelected")) {
+    document.getElementById("styleSelected").value = styleName;
+}
 
-    } else {
-        select.innerHTML = `<option>No styles found</option>`;
-    }
-});
+form.addEventListener("submit", async (e) => {
 
-
-// SUBMIT ENQUIRY
-document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const data = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         phone: document.getElementById("phone").value,
-        style: document.getElementById("styleSelect").value,
-        date: document.getElementById("date").value,
+        style:
+            styleName ||
+            document.getElementById("styleCategory").value,
         message: document.getElementById("message").value
     };
 
     try {
 
-        const res = await fetch("https://ike-elite-backend.onrender.com/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
+        const res = await fetch(
+            "https://ike-elite-backend.onrender.com/api/enquiry",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
 
         const result = await res.json();
 
-        alert(result.message || "Sent successfully");
-
-        e.target.reset();
+        if (result.success) {
+            alert("Enquiry Sent Successfully");
+            form.reset();
+        } else {
+            alert("Failed To Send Enquiry");
+        }
 
     } catch (err) {
+
         console.error(err);
-        alert("Failed to send enquiry");
+        alert("Server Error");
+
     }
+
+});
+```
+
 });

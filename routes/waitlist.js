@@ -1,3 +1,5 @@
+const router = express.Router();
+module.exports = router;
 router.post("/waitlist", async (req, res) => {
 
   try {
