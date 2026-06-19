@@ -1,6 +1,17 @@
+const express = require("express");
+const nodemailer = require("nodemailer");
+
 const router = express.Router();
-module.exports = router;
-router.post("/waitlist", async (req, res) => {
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASS
+  }
+});
+
+router.post("/", async (req, res) => {
 
   try {
 
@@ -20,10 +31,22 @@ router.post("/waitlist", async (req, res) => {
       `
     });
 
-    res.json({ message: "Waitlist submitted" });
+    res.json({
+      success: true,
+      message: "Waitlist submitted"
+    });
 
   } catch (err) {
-    res.status(500).json({ message: "Failed" });
+
+    console.log(err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed"
+    });
+
   }
 
 });
+
+module.exports = router;
