@@ -1,7 +1,21 @@
 // ============================================
 // STYLE DATABASE
 // ============================================
+function showToast(message){
 
+const box = document.getElementById("toastBox");
+
+const div = document.createElement("div");
+div.className = "toast";
+div.innerText = message;
+
+box.appendChild(div);
+
+setTimeout(() => {
+div.remove();
+}, 3000);
+
+}
 // ============================================
 // STYLE IMAGES
 // ============================================

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,8 @@
 <body>
 
 <section class="enquiry-hero">
-    <h1>MAKE AN ENQUIRY</h1>
-    <p>Tell us about the outfit you want and we'll get back to you.</p>
+<h1>MAKE AN ENQUIRY</h1>
+<p>Tell us what you want, we will respond quickly.</p>
 </section>
 
 <section class="enquiry-container">
@@ -21,45 +22,75 @@
 <form id="enquiryForm">
 
 <div class="form-group">
-<label>Full Name *</label>
+<label>Full Name</label>
 <input type="text" id="name" required>
 </div>
 
 <div class="form-group">
-<label>Email *</label>
+<label>Email</label>
 <input type="email" id="email" required>
 </div>
 
 <div class="form-group">
-<label>WhatsApp Number *</label>
+<label>WhatsApp Number</label>
 <input type="tel" id="phone" required>
 </div>
 
-<!-- STYLE SELECT (FIXED) -->
 <div class="form-group">
-<label>Select Style *</label>
-<select id="styleSelect" required>
-<option value="">Loading styles...</option>
-</select>
+<label>Selected Style</label>
+<input type="text" id="styleSelected" readonly>
 </div>
 
 <div class="form-group">
-<label>Event Date *</label>
-<input type="date" id="date" required>
-</div>
-
-<div class="form-group">
-<label>Additional Information</label>
+<label>Message</label>
 <textarea id="message" rows="5"></textarea>
 </div>
 
-<button type="submit" class="btn">Submit Enquiry</button>
+<button type="submit" class="btn">Send Enquiry</button>
 
 </form>
 
 </section>
 
-<script src="enquiry.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // show selected style
+    const styleName = localStorage.getItem("styleName");
+    if (styleName) {
+        document.getElementById("styleSelected").value = styleName;
+    }
+
+    document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            style: localStorage.getItem("styleName"),
+            message: document.getElementById("message").value
+        };
+
+        const res = await fetch("https://ike-elite-backend.onrender.com/api/enquiry", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+            showToast("Enquiry sent!");
+        } else {
+            showToast("Failed to send enquiry");
+        }
+    });
+
+});
+</script>
 
 </body>
 </html>
