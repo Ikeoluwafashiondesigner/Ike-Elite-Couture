@@ -23,7 +23,14 @@ transporter.verify(function(error, success) {
   }
 
 });
+router.get("/email-test", (req,res)=>{
 
+  res.json({
+    email: process.env.EMAIL,
+    hasPass: !!process.env.EMAIL_PASS
+  });
+
+});
 // CONTACT EMAIL
 router.post("/contact", async(req,res)=>{
 
