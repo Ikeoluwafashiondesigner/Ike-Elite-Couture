@@ -21,7 +21,13 @@ transporter.verify(function(error, success) {
   }else{
     console.log("SMTP READY");
   }
+transporter.verify((error, success) => {
 
+  console.log("VERIFY ERROR:", error);
+
+  console.log("VERIFY SUCCESS:", success);
+
+});
 });
 router.get("/email-test", (req,res)=>{
 
