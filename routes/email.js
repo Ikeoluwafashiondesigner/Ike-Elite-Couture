@@ -5,14 +5,18 @@ const router = express.Router();
 console.log("EMAIL:", process.env.EMAIL);
 console.log("HAS PASS:", !!process.env.EMAIL_PASS);
 const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
 
-  service:"gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASS
+  },
 
-  auth:{
-    user:process.env.EMAIL,
-    pass:process.env.EMAIL_PASS
-  }
-
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000
 });
 transporter.verify(function(error, success) {
 

@@ -3721,3 +3721,14 @@ animation: fade 3s forwards;
 90%{opacity:1;}
 100%{opacity:0; transform:translateY(20px);}
 }
+.enquiry-overlay,
+.waitlist-overlay,
+.collection-overlay{
+pointer-events:none;
+}
+
+.enquiry-overlay a,
+.waitlist-overlay a,
+.collection-overlay a{
+pointer-events:auto;
+}
