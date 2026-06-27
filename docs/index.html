@@ -15,19 +15,7 @@
         ]
         }
         </script>
-<!-- Link Manifest -->
-<link rel="manifest" href="manifest.json">
 
-<!-- Register Service Worker -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log('App Service Worker registered!'))
-        .catch(err => console.log('Service worker error', err));
-    });
-  }
-</script>
 
         <meta name="google-site-verification" content="NuV9x8NHfUBl2WSJt3tGxTQYD21jdHJgogbutvHCgh8" />
         <meta name="google-site-verification" content="_yTJBR6G61EPQjbQ8K31RW5ddGnCDum_qsETnp9eVVo" />
@@ -60,6 +48,8 @@
         
         <!-- STYLES -->
         <link rel="stylesheet" href="style.css">
+        <!-- Clean relative link for files in the same folder -->
+        <link rel="manifest" href="./manifest.json">
 
         
         <!-- ICONS -->
@@ -1078,7 +1068,17 @@ All rights reserved.
 
 <script src="ai.js" defer></script>
 
-
+<!-- Clean relative registration for files in the same folder -->
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('App Service Worker registered!'))
+                            .catch(err => console.log('Service worker error', err));
+                                });
+                                  }
+                                  </script>
+                                  
 <script>
 
     document.querySelectorAll(".nav-drop-btn").forEach(button=>{
