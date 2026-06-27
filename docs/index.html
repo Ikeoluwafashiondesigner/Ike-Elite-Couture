@@ -15,6 +15,20 @@
         ]
         }
         </script>
+<!-- Link Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('App Service Worker registered!'))
+        .catch(err => console.log('Service worker error', err));
+    });
+  }
+</script>
+
         <meta name="google-site-verification" content="NuV9x8NHfUBl2WSJt3tGxTQYD21jdHJgogbutvHCgh8" />
         <meta name="google-site-verification" content="_yTJBR6G61EPQjbQ8K31RW5ddGnCDum_qsETnp9eVVo" />
         <meta charset="UTF-8">
@@ -1191,8 +1205,23 @@ target="_blank">
     }
     
     };
-    
+
 </script>
+<!-- Floating Action Button -->
+<button id="pwaDownloadBtn" style="position: fixed; bottom: 85px; right: 20px; background-color: #000000; color: #ffffff; border: 2px solid #ffffff; padding: 12px 18px; border-radius: 30px; font-weight: bold; cursor: pointer; z-index: 9999; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); display: none; align-items: center; gap: 8px;">
+  📲 Download App
+</button>
+
+<!-- Custom iOS Instructions Modal Popup -->
+<div id="iosModal" style="display: none; position: fixed; bottom: 100px; right: 20px; width: 280px; background: white; color: black; border-radius: 12px; padding: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 10000; font-family: sans-serif; border: 1px solid #ddd;">
+  <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">Install on iPhone</div>
+  <p style="margin: 0 0 12px 0; font-size: 13px; line-height: 1.4;">Tap the <strong>Share</strong> button <img src=">
+https://icons8.com
+" width="15" style="vertical-align:middle"/> in Safari browser, then scroll down and select <strong>'Add to Home Screen'</strong>.</p>
+  <button id="closeIosModal" style="background: #000; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 12px;">Got it</button>
+  </div>
+
+
 <!-- AI FLOAT BUTTON -->
 <div id="ai-float-btn">🤖</div>
 
@@ -1222,5 +1251,62 @@ placeholder="Ask about prices, styles, bookings, delivery...">
 </div>
 
 </div>
+<script>
+      let deferredPrompt;
+        const downloadBtn = document.getElementById('pwaDownloadBtn');
+          const iosModal = document.getElementById('iosModal');
+            const closeIosModal = document.getElementById('closeIosModal');
+
+              // Check if user is on iPhone/Safari
+                const isIos = () => {
+                    const userAgent = window.navigator.userAgent.toLowerCase();
+                        return /iphone|ipad|ipod/.test(userAgent);
+                          }
+                            
+                              // Check if app is already running as an installed application window
+                                const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+                                  window.addEventListener('beforeinstallprompt', (e) => {
+                                      // Prevent the default browser download banner from popping up automatically
+                                          e.preventDefault();
+                                              deferredPrompt = e;
+                                                  // Show our custom floating button for Android/PC users
+                                                      downloadBtn.style.display = 'flex';
+                                                        });
+
+                                                          // Setup behavior when the button is clicked
+                                                            downloadBtn.addEventListener('click', async () => {
+                                                                if (isIos()) {
+                                                                      // Show custom popup modal with installation steps for iOS devices
+                                                                            iosModal.style.display = 'block';
+                                                                                } else if (deferredPrompt) {
+                                                                                      // Trigger the native installation setup for Android devices
+                                                                                            deferredPrompt.prompt();
+                                                                                                  const { outcome } = await deferredPrompt.userChoice;
+                                                                                                        if (outcome === 'accepted') {
+                                                                                                                downloadBtn.style.display = 'none';
+                                                                                                                      }
+                                                                                                                            deferredPrompt = null;
+                                                                                                                                }
+                                                                                                                                  });
+
+                                                                                                                                    // Always show the button for iOS users if they haven't added it yet
+                                                                                                                                      if (isIos() && !isInStandaloneMode()) {
+                                                                                                                                          downloadBtn.style.display = 'flex';
+                                                                                                                                            }
+
+                                                                                                                                              // Handle closing the iOS instruction display window
+                                                                                                                                                closeIosModal.addEventListener('click', () => {
+                                                                                                                                                    iosModal.style.display = 'none';
+                                                                                                                                                      });
+
+                                                                                                                                                        // APP LOGIC DIFFERENTIATION: Keep user permanently logged in if viewing from inside the App
+                                                                                                                                                          if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+                                                                                                                                                              console.log("Running inside the App view!");
+                                                                                                                                                                  // You can write logic here to save authentication tokens long-term via localStorage
+                                                                                                                                                                      // example: localStorage.setItem('keepLoggedIn', 'true');
+                                                                                                                                                                        }
+                                                                                                                                                                        </script>
+                                                                                                                                                                        
 </body>
 </html>
