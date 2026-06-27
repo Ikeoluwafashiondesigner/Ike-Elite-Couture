@@ -3732,3 +3732,40 @@ pointer-events:none;
 .collection-overlay a{
 pointer-events:auto;
 }
+/* Hide everything that goes off the edge of the mobile screen */
+.marquee-wrapper {
+  overflow: hidden !important;
+    width: 100% !important;
+      background-color: #ffffff;
+        padding: 10px 0;
+        }
+
+        /* Align all your image contents into a single straight row */
+        .marquee-track {
+          display: flex !important;
+            width: max-content !important;
+              gap: 20px; /* Space between individual images */
+                
+                  /* Animates the track right to left continuously */
+                    animation: smoothScroll 15s linear infinite !important;
+                    }
+
+                    /* Set the display dimensions for your fashion image items */
+                    .marquee-track img {
+                      width: 150px;
+                        height: 200px;
+                          object-fit: cover;
+                            border-radius: 8px;
+                            }
+
+                            /* The core looping logic matrix */
+                            @keyframes smoothScroll {
+                              0% {
+                                  transform: translateX(0);
+                                    }
+                                      100% {
+                                          /* Moves exactly halfway through the double content track, then resets invisibly */
+                                              transform: translateX(-50%);
+                                                }
+                                                }
+                                                
