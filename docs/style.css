@@ -3838,4 +3838,118 @@ section, .section, main, .container {
                                                                                                 pointer-events: auto !important; /* Forces the browser to intercept and execute touch actions */
                                                                                                   }
                                                                                                   }
-                                                                                                                 
+/* 🔑 UNLOCK BOOKING FORM GROUPS ON MOBILE DEVICES */
+.form-group, .booking-form, form, .form-container {
+  position: relative !important;
+    display: block !important;
+      clear: both !important;
+        overflow: visible !important;
+          height: auto !important;
+            /* Allows taps to fall straight onto nested content components */
+              pointer-events: auto !important; 
+              }
+
+              /* Force form inputs, textareas, and select menus to capture finger touches */
+              .form-group input, 
+              .form-group select, 
+              .form-group textarea, 
+              .form-group label,
+              form button,
+              #bookOutfitForm input,
+              #bookOutfitForm select {
+                position: relative !important;
+                  z-index: 999999 !important; /* Pulls fields completely above overlapping margin wrappers */
+                    pointer-events: auto !important; /* Directs the browser to process mobile clicks */
+                      cursor: text !important;
+                      }
+                      /* 🔑 FIX MARQUEE SLIDER TRACK OVERLAPS */
+                      .marquee-wrapper {
+                        position: relative !important;
+                          width: 100% !important;
+                            overflow: hidden !important; /* Clips slider images hanging off the screen edge */
+                              display: block !important;
+                                clear: both !important;
+                                  padding: 15px 0 !important;
+                                    z-index: 10 !important;
+                                    }
+
+                                    .marquee-track {
+                                      display: flex !important; /* Forces images to align side-by-side inside a single straight row */
+                                        flex-direction: row !important; /* Overrides column-collapsing behaviors */
+                                          width: max-content !important; /* Allows the track length to stretch naturally */
+                                            gap: 20px !important; /* Adds clear layout separation between style frames */
+                                            }
+
+                                            /* Ensure slider items keep their portrait fashion layout proportions without squishing */
+                                            .marquee-track img {
+                                              width: 160px !important; /* Perfect display scale width on small screens */
+                                                height: 220px !important;
+                                                  object-fit: cover !important; /* Locks dimensions and avoids distorting images */
+                                                    flex-shrink: 0 !important; /* Prevents mobile layouts from compressing images to zero width */
+                                                    }
+                                                    /* 🔑 GLOBAL SUBPAGE TOUCH LAYER RESTORATION MATRIX */
+                                                    @media (max-width: 768px) {
+                                                      /* Forces all main body components to drop their empty overlapping boundaries */
+                                                        main, 
+                                                          .gallery-container, 
+                                                            .gallery-wrapper, 
+                                                              section, 
+                                                                .section {
+                                                                    position: relative !important;
+                                                                        display: block !important;
+                                                                            clear: both !important;
+                                                                                overflow: visible !important;
+                                                                                    height: auto !important;
+                                                                                        pointer-events: auto !important;
+                                                                                          }
+
+                                                                                            /* Physically elevates the gallery images and text elements above hidden containers */
+                                                                                              .gallery-grid, 
+                                                                                                .gallery-grid *, 
+                                                                                                  .gallery-item, 
+                                                                                                    .gallery-item img, 
+                                                                                                      .gallery-item button {
+                                                                                                          position: relative !important;
+                                                                                                              z-index: 999999 !important; /* Pulls components directly to the top layer sheet */
+                                                                                                                  pointer-events: auto !important; /* Restores hardware touch response on mobile screens */
+                                                                                                                    }
+                                                                                                                    }
+                                                                                                                    /* 📸 PORTRAIT FASHION CARD LAYOUT - 1 PER ROW */
+                                                                                                                    @media (max-width: 768px) {
+                                                                                                                      .gallery-grid {
+                                                                                                                          display: grid !important;
+                                                                                                                              grid-template-columns: repeat(1, 1fr) !important; /* Forces 1 item per row */
+                                                                                                                                  gap: 24px !important; /* Clean breathing space between cards */
+                                                                                                                                      padding: 16px !important;
+                                                                                                                                          width: 100% !important;
+                                                                                                                                              box-sizing: border-box !important;
+                                                                                                                                                }
+
+                                                                                                                                                  .gallery-item, .gallery-grid img {
+                                                                                                                                                      width: 100% !important;
+                                                                                                                                                          height: 420px !important; /* Tall, elegant portrait framing */
+                                                                                                                                                              object-fit: cover !important; /* Prevents fabric patterns from stretching */
+                                                                                                                                                                  border-radius: 16px !important;
+                                                                                                                                                                      box-shadow: 0px 4px 15px rgba(0,0,0,0.1) !important;
+                                                                                                                                                                        }
+                                                                                                                                                                        }
+                                                                                                                                                                        /* 📸 COMPACT MULTI-COLUMN LAYOUT - 2 PER ROW */
+                                                                                                                                                                        @media (max-width: 768px) {
+                                                                                                                                                                          .gallery-grid {
+                                                                                                                                                                              display: grid !important;
+                                                                                                                                                                                  grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 items per row */
+                                                                                                                                                                                      gap: 12px !important; /* Tighter gap to maximize mobile screen space */
+                                                                                                                                                                                          padding: 12px !important;
+                                                                                                                                                                                              width: 100% !important;
+                                                                                                                                                                                                  box-sizing: border-box !important;
+                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                      .gallery-item, .gallery-grid img {
+                                                                                                                                                                                                          width: 100% !important;
+                                                                                                                                                                                                              height: 240px !important; /* Shorter height to balance the 2-column layout */
+                                                                                                                                                                                                                  object-fit: cover !important;
+                                                                                                                                                                                                                      border-radius: 12px !important;
+                                                                                                                                                                                                                          box-shadow: 0px 3px 10px rgba(0,0,0,0.08) !important;
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                           

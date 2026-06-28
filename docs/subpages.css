@@ -39,4 +39,31 @@ body {
                                                           height: 350px !important; /* Balances structural image heights on desktop views */
                                                             }
                                                             }
-                                                                             
+/* 🔑 GLOBAL SUBPAGE TOUCH LAYER RESTORATION MATRIX */
+@media (max-width: 768px) {
+  /* Forces all main body components to drop their empty overlapping boundaries */
+    main, 
+      .gallery-container, 
+        .gallery-wrapper, 
+          section, 
+            .section {
+                position: relative !important;
+                    display: block !important;
+                        clear: both !important;
+                            overflow: visible !important;
+                                height: auto !important;
+                                    pointer-events: auto !important;
+                                      }
+
+                                        /* Physically elevates the gallery images and text elements above hidden containers */
+                                          .gallery-grid, 
+                                            .gallery-grid *, 
+                                              .gallery-item, 
+                                                .gallery-item img, 
+                                                  .gallery-item button {
+                                                      position: relative !important;
+                                                          z-index: 999999 !important; /* Pulls components directly to the top layer sheet */
+                                                              pointer-events: auto !important; /* Restores hardware touch response on mobile screens */
+                                                                }
+                                                                }
+                                                                                                                                           
