@@ -3786,4 +3786,31 @@ pointer-events:auto;
                     #yourToastBoxIdName * {
                       pointer-events: auto !important;
                       }
-                      
+/* Fixes alignment and blocks overlap across all section containers on mobile views */
+section, .section, main, .container {
+  position: relative !important;
+
+      /* 🔑 FORCE INDEPENDENT DEPTH: Prevents sections from stepping over each other */
+        display: block !important; 
+          clear: both !important;
+
+              /* 🔑 UNCLOG TOUCH BOXES: Forces tight layout boxes so margins don't stretch over lower content */
+                overflow: visible !important; 
+                }
+
+                /* Fixes individual layout grids or columns inside your sections */
+                .row, .grid, .card-wrapper {
+                  display: flex !important;
+                    flex-direction: column !important; /* Stack elements cleanly on mobile views */
+                      height: auto !important; /* Prevents frozen heights from letting content overflow out */
+                      }
+
+                      @media (max-width: 768px) {
+                        /* Targets all buttons inside your lower sections to push them to the very front */
+                          section button, .section a, .card button, .product-section btn {
+                              position: relative !important;
+                                  z-index: 99999 !important; /* Places buttons on top of all invisible container layers */
+                                      pointer-events: auto !important; /* Ensures the browser accepts touch tracking on mobile */
+                                        }
+                                        }
+                                                       

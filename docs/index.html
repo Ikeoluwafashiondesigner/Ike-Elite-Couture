@@ -54,7 +54,7 @@
         
         <!-- ICONS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        
+
         <!-- FONT -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -1066,19 +1066,7 @@ All rights reserved.
 
 <script src="auth.js" defer></script>
 
-<script src="ai.js" defer></script>
-
-<!-- Clean relative registration for files in the same folder -->
-<script>
-  if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('App Service Worker registered!'))
-                            .catch(err => console.log('Service worker error', err));
-                                });
-                                  }
-                                  </script>
-                                  
+<script src="ai.js" defer></script>                        
 <script>
 
     document.querySelectorAll(".nav-drop-btn").forEach(button=>{
@@ -1134,45 +1122,6 @@ All rights reserved.
     });
     
 </script>
-<script>
-  let pwaEventPrompt;
-    const targetBtn = document.getElementById('pwaDownloadBtn');
-
-      // Detection helper function blocks for iOS setup routines
-        const deviceCheckIos = () => /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
-          const standaloneCheck = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-            // Fallback override: If the visitor is on an iPhone, force the button to display right away
-              if (deviceCheckIos() && !standaloneCheck()) {
-                  targetBtn.style.display = 'flex';
-                    }
-
-                      // Intercept the browser installation event trigger configuration
-                        window.addEventListener('beforeinstallprompt', (e) => {
-                            e.preventDefault();
-                                pwaEventPrompt = e;
-                                    targetBtn.style.display = 'flex'; // Turn button on for Android/PC systems safely
-                                      });
-
-                                        // Action routine executed upon button press
-                                          targetBtn.addEventListener('click', async () => {
-                                              if (deviceCheckIos()) {
-                                                    // Alert popup instructions explicitly for iOS device installations
-                                                          alert("To install: Tap the 'Share' button in Safari, scroll down, and select 'Add to Home Screen'!");
-                                                              } else if (pwaEventPrompt) {
-                                                                    // Trigger the native interactive application installer panel for Android systems
-                                                                          pwaEventPrompt.prompt();
-                                                                                const { outcome } = await pwaEventPrompt.userChoice;
-                                                                                      if (outcome === 'accepted') {
-                                                                                              targetBtn.style.display = 'none';
-                                                                                                    }
-                                                                                                          pwaEventPrompt = null;
-                                                                                                              } else {
-                                                                                                                    alert("PWA setup configurations are still initializing. Try refreshing your current browser tab view!");
-                                                                                                                        }
-                                                                                                                          });
-                                                                                                                          </script>
-
 <div id="yourToastBoxIdName"></div>
 <a
 href="https://wa.me/2348109174369"
@@ -1245,31 +1194,7 @@ target="_blank">
     };
 
 </script>
-<!-- Moved to the LEFT side to prevent overlapping other floating buttons -->
-<button id="pwaDownloadBtn" style="position: fixed !important; bottom: 95px !important; left: 20px !important; background-color: #000000 !important; color: #ffffff !important; border: 2px solid #ffffff !important; padding: 14px 20px !important; border-radius: 30px !important; font-weight: bold !important; z-index: 999999 !important; display: none; align-items: center !important; gap: 8px !important; box-shadow: 0px 4px 15px rgba(0,0,0,0.4) !important;">
-  📲 Download App
-</button>
 
-<!-- Custom iOS Instructions Modal Popup -->
-<div id="iosModal" style="display: none; position: fixed; bottom: 100px; right: 20px; width: 280px; background: white; color: black; border-radius: 12px; padding: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 10000; font-family: sans-serif; border: 1px solid #ddd;">
-  <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">Install on iPhone</div>
-
-<!-- Clean relative registration for files in the same folder -->
-<script>
-  if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('App Service Worker registered!'))
-                            .catch(err => console.log('Service worker error', err));
-                                });
-                                  }
-                                  </script>
-                                  -->
-  <p style="margin: 0 0 12px 0; font-size: 13px; line-height: 1.4;">Tap the <strong>Share</strong> button <img src=">
-https://icons8.com
-" width="15" style="vertical-align:middle"/> in Safari browser, then scroll down and select <strong>'Add to Home Screen'</strong>.</p>
-  <button id="closeIosModal" style="background: #000; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 12px;">Got it</button>
-  </div>
 
 
 <!-- AI FLOAT BUTTON -->
@@ -1300,6 +1225,48 @@ placeholder="Ask about prices, styles, bookings, delivery...">
 </button>
 </div>
 
-</div>                                                                                                                                                            
+</div>     
+<!-- Independent Fixed Download Block -->
+<div id="pwaMobileContainer" style="position: fixed !important; bottom: 95px !important; left: 20px !important; z-index: 9999999 !important; display: flex !important;">
+  <button id="pwaRealDownloadBtn" style="background-color: #000000 !important; color: #ffffff !important; border: 2px solid #ffffff !important; padding: 14px 20px !important; border-radius: 30px !important; font-weight: bold !important; box-shadow: 0px 4px 15px rgba(0,0,0,0.4) !important; display: flex !important; align-items: center !important; gap: 8px !important; cursor: pointer !important;">
+      📲 Download App
+        </button>
+        </div>
+        
+        <!-- Isolated Script Engine that will never lock up your page -->
+        <script>
+          (function() {
+              window.addEventListener('load', () => {
+                    const btn = document.getElementById('pwaRealDownloadBtn');
+                          if (!btn) return;
+                          
+                                let promptTracker;
+                                      const checkApple = () => /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+                                      
+                                            // Listen safely for Android installation capabilities
+                                                  window.addEventListener('beforeinstallprompt', (e) => {
+                                                          e.preventDefault();
+                                                                  promptTracker = e;
+                                                                        });
+                                                                        
+                                                                              // Handle the touch event safely without crashing other modules
+                                                                                    btn.addEventListener('click', async (e) => {
+                                                                                            e.preventDefault();
+                                                                                                    e.stopPropagation();
+                                                                                                            
+                                                                                                                    if (checkApple()) {
+                                                                                                                              alert("To install on iPhone: Tap the 'Share' button in Safari, scroll down, and select 'Add to Home Screen'!");
+                                                                                                                                      } else if (promptTracker) {
+                                                                                                                                                promptTracker.prompt();
+                                                                                                                                                          await promptTracker.userChoice;
+                                                                                                                                                                    promptTracker = null;
+                                                                                                                                                                            } else {
+                                                                                                                                                                                      alert("App setup is initializing. If you're on Chrome/Android, tap your browser's top 3-dots menu and click 'Add to Home Screen' directly!");
+                                                                                                                                                                                              }
+                                                                                                                                                                                                    });
+                                                                                                                                                                                                        });
+                                                                                                                                                                                                          })();
+                                                                                                                                                                                                          </script>
+                                                                                                                                                                                                                                                                                                                                                              
 </body>
 </html>
