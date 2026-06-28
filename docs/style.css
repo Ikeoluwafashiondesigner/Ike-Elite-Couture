@@ -3768,4 +3768,22 @@ pointer-events:auto;
                                               transform: translateX(-50%);
                                                 }
                                                 }
-                                                
+/* Target your specific Toast Box ID */
+#yourToastBoxIdName {
+  position: fixed !important;
+    bottom: 20px !important;
+      left: 50% !important;
+        transform: translateX(-50%) !important;
+          z-index: 9999999 !important;
+            width: 90% !important;
+              max-width: 400px !important;
+                
+                  /* CRUCIAL FIX: This makes the empty layout space completely click-through! */
+                    pointer-events: none !important; 
+                    }
+
+                    /* If you have text or buttons INSIDE that toast box, make them clickable */
+                    #yourToastBoxIdName * {
+                      pointer-events: auto !important;
+                      }
+                      
