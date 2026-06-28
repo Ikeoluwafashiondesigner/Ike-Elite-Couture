@@ -146,42 +146,7 @@ function(){
 
 // ============================================
 // SLIDER
-// ============================================
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-  const slides =
-  document.querySelectorAll(".slide");
-
-  if(slides.length === 0) return;
-
-  let currentSlide = 0;
-
-  function showSlides(){
-
-    slides.forEach(slide=>{
-      slide.classList.remove("active");
-    });
-
-    currentSlide++;
-
-    if(currentSlide >= slides.length){
-      currentSlide = 0;
-    }
-
-    slides[currentSlide]
-    .classList.add("active");
-
-  }
-
-  showSlides();
-
-  setInterval(showSlides,3000);
-
-}
-);
+// ===========================================
 function toggleMobileTheme(){
 
   const menu =

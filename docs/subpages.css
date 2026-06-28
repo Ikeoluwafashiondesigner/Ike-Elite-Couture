@@ -32,7 +32,7 @@ body {
                                     @media (min-width: 768px) {
                                       .gallery-grid {
                                           /* Automatically scales out horizontally to 4 items in a row on widescreen views */
-                                              grid-template-columns: repeat(4, 1fr) !important;
+                                              grid-template-columns: repeat(3, 1fr) !important;
                                                   gap: 20px !important;
                                                     }
                                                       .gallery-grid img {
