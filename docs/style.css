@@ -3813,4 +3813,29 @@ section, .section, main, .container {
                                       pointer-events: auto !important; /* Ensures the browser accepts touch tracking on mobile */
                                         }
                                         }
-                                                       
+                                        /* 🌍 GLOBAL MOBILE ELEMENT UNBLOCKER FOR MAIN PAGES */
+                                        @media (max-width: 768px) {
+                                          /* Targets all sections, main content structural bodies, and informational rows */
+                                            section, main, .container, .about-section, .contact-section, .form-container {
+                                                position: relative !important;
+                                                    display: block !important;
+                                                        clear: both !important;
+                                                            overflow: visible !important;
+                                                                height: auto !important; /* Prevents hardcoded heights from letting empty bounds overflow */
+                                                                  }
+
+                                                                    /* Physically pulls all actionable components directly to the front display layering sheet */
+                                                                      section button, 
+                                                                        section a, 
+                                                                          form input, 
+                                                                            form textarea, 
+                                                                              form button,
+                                                                                .contact-section a,
+                                                                                  .about-section btn,
+                                                                                    footer a {
+                                                                                        position: relative !important;
+                                                                                            z-index: 999999 !important; /* Places elements on top of any overlapping layout masks */
+                                                                                                pointer-events: auto !important; /* Forces the browser to intercept and execute touch actions */
+                                                                                                  }
+                                                                                                  }
+                                                                                                                 
