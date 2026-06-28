@@ -1,5 +1,5 @@
 {
-    "short_name": "IkeElite",
+    "short_name": "IkeEliteCouture",
       "name": "IKE-ELITE-COUTURE",
         "icons": [
             {
@@ -13,11 +13,9 @@
                                                         "sizes": "512x512"
                                                             }
                                                               ],
-                                                                "start_url": "./homepage.html?utm_source=pwa",
+                                                                "start_url": "https://ikeelitecouture.netlify.app",
                                                                   "background_color": "#ffffff",
                                                                     "theme_color": "#000000",
                                                                       "display": "standalone",
                                                                         "orientation": "portrait"
-                                                                        
-
-}
+                                                                        }
